@@ -2,32 +2,22 @@
 title: XRSystem
 slug: Web/API/XRSystem
 page-type: web-api-interface
-tags:
-  - API
-  - AR
-  - Augmented Reality
-  - Experimental
-  - Interface
-  - Reference
-  - VR
-  - Virtual Reality
-  - WebXR
-  - WebXR Device API
-  - XR
-  - XRSystem
+status:
+  - experimental
 browser-compat: api.XRSystem
 ---
+
 {{APIRef("WebXR Device API")}}{{SecureContext_Header}}{{SeeCompatTable}}
 
 The [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API) interface **`XRSystem`** provides methods which let you get access to an {{domxref("XRSession")}} object representing a WebXR session. With that `XRSession` in hand, you can use it to interact with the Augmented Reality (AR) or Virtual Reality (VR) device.
 
 {{InheritanceDiagram}}
 
-## Properties
+## Instance properties
 
 _While `XRSystem` directly offers no properties, it does inherit properties from its parent interface, {{domxref("EventTarget")}}._
 
-## Methods
+## Instance methods
 
 _In addition to inheriting methods from its parent interface, {{domxref("EventTarget")}}, the `XRSystem` interface includes the following methods:_
 
@@ -54,23 +44,20 @@ The following example shows how to use both {{domxref("XRSystem.isSessionSupport
 ```js
 if (navigator.xr) {
   immersiveButton.addEventListener("click", onButtonClicked);
-  navigator.xr.isSessionSupported('immersive-vr')
-  .then((isSupported) => {
+  navigator.xr.isSessionSupported("immersive-vr").then((isSupported) => {
     immersiveButton.disabled = !isSupported;
   });
 }
 
 function onButtonClicked() {
   if (!xrSession) {
-    navigator.xr.requestSession('immersive-vr')
-    .then((session) => {
+    navigator.xr.requestSession("immersive-vr").then((session) => {
       // onSessionStarted() not shown for reasons of brevity and clarity.
       onSessionStarted(session);
     });
   } else {
     // Shut down the already running XRSession
-    xrSession.end()
-    .then(() => {
+    xrSession.end().then(() => {
       // Since there are cases where the end event is not sent, call the handler here as well.
       onSessionEnded();
     });

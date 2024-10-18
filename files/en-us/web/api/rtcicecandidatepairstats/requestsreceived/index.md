@@ -1,22 +1,11 @@
 ---
-title: RTCIceCandidatePairStats.requestsReceived
+title: "RTCIceCandidatePairStats: requestsReceived property"
+short-title: requestsReceived
 slug: Web/API/RTCIceCandidatePairStats/requestsReceived
 page-type: web-api-instance-property
-tags:
-  - API
-  - ICE
-  - Networking
-  - Property
-  - RTCIceCandidatePairStats
-  - Reference
-  - Statistics
-  - Stats
-  - WebRTC
-  - WebRTC API
-  - request
-  - requestsReceived
-browser-compat: api.RTCIceCandidatePairStats.requestsReceived
+browser-compat: api.RTCStatsReport.type_candidate-pair.requestsReceived
 ---
+
 {{APIRef("WebRTC")}}
 
 The {{domxref("RTCIceCandidatePairStats")}} dictionary's
@@ -33,10 +22,10 @@ requests that have been received to date on the connection described by this pai
 Because there's no way to tell the difference between requests made to check
 connectivity and requests made to check consent, the returned figure includes both.
 
-> **Note:** The reported number of requests includes retransmissions. If a
+> [!NOTE]
+> The reported number of requests includes retransmissions. If a
 > request had to be repeated due to network issues, it will be counted multiple times
-> here. This differs from {{domxref("RTCIceCandidatePairStats.requestsSent",
-    "requestsSent")}}, which _does not_ include retransmisions.
+> here. This differs from {{domxref("RTCIceCandidatePairStats.requestsSent", "requestsSent")}}, which _does not_ include retransmissions.
 
 ## Specifications
 

@@ -1,14 +1,11 @@
 ---
-title: HTMLAnchorElement.search
+title: "HTMLAnchorElement: search property"
+short-title: search
 slug: Web/API/HTMLAnchorElement/search
 page-type: web-api-instance-property
-tags:
-  - API
-  - HTMLAnchorElement
-  - Property
-  - Reference
 browser-compat: api.HTMLAnchorElement.search
 ---
+
 {{ApiRef("HTML DOM")}}
 
 The **`HTMLAnchorElement.search`** property is a search
@@ -19,7 +16,7 @@ Modern browsers provide
 [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples)
 and
 [`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams#examples)
-to make it easy to parse out the parameters from the querystring.
+to make it easy to parse out the parameters from the query string.
 
 ## Value
 

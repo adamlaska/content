@@ -1,17 +1,19 @@
 ---
-title: RTCIceCandidatePairStats.selected
+title: "RTCIceCandidatePairStats: selected property"
+short-title: selected
 slug: Web/API/RTCIceCandidatePairStats/selected
 page-type: web-api-instance-property
 browser-compat: api.RTCIceCandidatePairStats.selected
 ---
+
 {{APIRef("WebRTC")}}{{non-standard_header}}
 
 The _non-standard_, Firefox-specific {{domxref("RTCIceCandidatePairStats")}} property **`selected`** indicates whether or not the candidate pair described by the object is the one currently being used to communicate with the remote peer.
 
 ## Syntax
 
-```js
-isSelected = icpStats.selected;
+```js-nolint
+icpStats.selected
 ```
 
 ### Value
@@ -24,7 +26,7 @@ In any other browser, you can determine the selected candidate pair by looking f
 
 The function shown in this example identifies the currently-selected candidate pair from a statistics report by first iterating over each report, looking for a `transport` report; when one is found, that transport's {{domxref("RTCTransportStats.selectedCandidatePairId", "selectedCandidatePairId")}} is used to get the {{domxref("RTCIceCandidatePair")}} describing the connection.
 
-If that fails, then the second section iterates over the reports, looking for a `candidate-pair` record whose Firefox-specific {{domxref("RTCIceCandidatePairStats.selected", "selected")}} property is `true`. This candidate pair is then returned as the currently-selected one.
+If that fails, then the second section iterates over the reports, looking for a `candidate-pair` record whose Firefox-specific `selected` property is `true`. This candidate pair is then returned as the currently-selected one.
 
 ```js
 function getCurrentCandidatePair(statsResults) {

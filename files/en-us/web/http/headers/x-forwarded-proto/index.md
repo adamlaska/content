@@ -1,14 +1,11 @@
 ---
 title: X-Forwarded-Proto
 slug: Web/HTTP/Headers/X-Forwarded-Proto
-tags:
-  - HTTP
-  - HTTP Header
-  - Non-standard
-  - Reference
-  - Request header
-  - header
+page-type: http-header
+status:
+  - non-standard
 ---
+
 {{HTTPSidebar}}
 
 The **`X-Forwarded-Proto`** (XFP) header is a de-facto standard

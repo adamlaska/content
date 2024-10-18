@@ -1,17 +1,12 @@
 ---
-title: DOMMatrix()
+title: "DOMMatrix: DOMMatrix() constructor"
+short-title: DOMMatrix()
 slug: Web/API/DOMMatrix/DOMMatrix
 page-type: web-api-constructor
-tags:
-  - API
-  - Constructor
-  - Geometry
-  - Geometry Interfaces
-  - Reference
-  - matrix
 browser-compat: api.DOMMatrix.DOMMatrix
 ---
-{{APIRef("Geometry Interfaces")}}
+
+{{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
 The **`DOMMatrix`** constructor creates a new
 {{domxref("DOMMatrix")}} object which represents 4x4 matrices, suitable for 2D and 3D
@@ -19,7 +14,7 @@ operations.
 
 ## Syntax
 
-```js
+```js-nolint
 new DOMMatrix()
 new DOMMatrix(init)
 ```
@@ -27,16 +22,18 @@ new DOMMatrix(init)
 ### Parameters
 
 - `init` {{optional_inline}}
+
   - : An array of numbers specifying the matrix you want to create, or a CSS transform string.
 
     In case an array of numbers is passed, the behavior depends on the length of the array:
+
     - for a 6-element array of components in the form `[a, b, c, d, e, f]`, a 2D matrix is created, initialized with the provided components.
     - for a 16-element array of components (in the column-major order) in the form `[m11, m12, m13, …, m42, m43, m44]`, a 3D matrix is created, initialized with the provided components.
 
 ## Examples
 
 This example creates a DOMMatrix to use as an argument for calling
-{{domxref("Point.matrixTransform()")}}.
+{{domxref("DOMPointReadOnly.matrixTransform()")}}.
 
 ```js
 const point = new DOMPoint(5, 4);
@@ -51,7 +48,7 @@ const matrix = new DOMMatrix([
   -Math.sin(angle) * scaleY,
   Math.cos(angle) * scaleY,
   translateX,
-  translateY
+  translateY,
 ]);
 const transformedPoint = point.matrixTransform(matrix);
 ```

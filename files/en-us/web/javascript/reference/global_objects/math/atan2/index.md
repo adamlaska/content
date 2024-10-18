@@ -1,23 +1,19 @@
 ---
 title: Math.atan2()
 slug: Web/JavaScript/Reference/Global_Objects/Math/atan2
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.atan2
 ---
 
 {{JSRef}}
 
-The **`Math.atan2()`** function returns the angle in the plane (in radians) between the positive x-axis and the ray from (0, 0) to the point (x, y), for `Math.atan2(y, x)`.
+The **`Math.atan2()`** static method returns the angle in the plane (in radians) between the positive x-axis and the ray from (0, 0) to the point (x, y), for `Math.atan2(y, x)`.
 
 {{EmbedInteractiveExample("pages/js/math-atan2.html")}}
 
 ## Syntax
 
-```js
+```js-nolint
 Math.atan2(y, x)
 ```
 
@@ -92,9 +88,9 @@ function format(template, ...args) {
     ...args.map((num) =>
       (Object.is(num, -0)
         ? "-0"
-        : formattedNumbers.get(num) ?? String(num)
-      ).padEnd(5)
-    )
+        : (formattedNumbers.get(num) ?? String(num))
+      ).padEnd(5),
+    ),
   );
 }
 
@@ -114,7 +110,7 @@ for (const x of [-Infinity, -1, -0, 0, 1, Infinity]) {
 
 The output is:
 
-```
+```plain
 | x     | y     | atan2 | atan  |
 |-------|-------|-------|-------|
 | -∞    | -∞    | -3π/4 | NaN   |

@@ -1,15 +1,10 @@
 ---
 title: Content-Range
 slug: Web/HTTP/Headers/Content-Range
-tags:
-  - HTTP
-  - HTTP Header
-  - Reference
-  - Response Header
-  - Header
-  - Payload header
+page-type: http-header
 browser-compat: http.headers.Content-Range
 ---
+
 {{HTTPSidebar}}
 
 The **`Content-Range`** response HTTP header indicates where in
@@ -21,7 +16,7 @@ a full body message a partial message belongs.
       <th scope="row">Header type</th>
       <td>
         {{Glossary("Response header")}},
-        {{Glossary("Payload header")}}
+        {{Glossary("Content header")}}
       </td>
     </tr>
     <tr>
@@ -30,8 +25,7 @@ a full body message a partial message belongs.
     </tr>
     <tr>
       <th scope="row">
-        {{Glossary("Simple response header", "CORS-safelisted
-        response-header")}}
+        {{Glossary("CORS-safelisted request header")}}
       </th>
       <td>no</td>
     </tr>
