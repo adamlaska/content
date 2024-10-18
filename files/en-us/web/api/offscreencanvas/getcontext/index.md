@@ -1,24 +1,18 @@
 ---
-title: OffscreenCanvas.getContext()
+title: "OffscreenCanvas: getContext() method"
+short-title: getContext()
 slug: Web/API/OffscreenCanvas/getContext
 page-type: web-api-instance-method
-tags:
-  - API
-  - Canvas
-  - Experimental
-  - Method
-  - OffscreenCanvas
-  - Reference
 browser-compat: api.OffscreenCanvas.getContext
 ---
 
-{{APIRef("Canvas API")}} {{SeeCompatTable}}
+{{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
 The **`OffscreenCanvas.getContext()`** method returns a drawing context for an offscreen canvas, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if the context identifier is not supported.
 
 ## Syntax
 
-```js
+```js-nolint
 getContext(contextType, contextAttributes)
 ```
 
@@ -33,15 +27,16 @@ getContext(contextType, contextAttributes)
     - `webgl`
       - : Creates a {{domxref("WebGLRenderingContext")}} object representing a three-dimensional rendering context.
         This context is only available on browsers that implement [WebGL](/en-US/docs/Web/API/WebGL_API) version 1 (OpenGL ES 2.0).
-    - `webgl2` {{experimental_inline}}
+    - `webgl2`
       - : Creates a {{domxref("WebGL2RenderingContext")}} object representing a three-dimensional rendering context.
         This context is only available on browsers that implement [WebGL](/en-US/docs/Web/API/WebGL_API) version 2 (OpenGL ES 3.0).
     - `bitmaprenderer`
       - : Creates a {{domxref("ImageBitmapRenderingContext")}} which only provides functionality to replace the content of the canvas with a given {{domxref("ImageBitmap")}}.
 
-    > **Note:** The identifiers **`"experimental-webgl"`** or **`"experimental-webgl2"`** are also used in implementations of WebGL.
+    > [!NOTE]
+    > The identifiers **`"experimental-webgl"`** or **`"experimental-webgl2"`** are also used in implementations of WebGL.
     > These implementations have not reached test suite conformance, or the graphic drivers situation on the platform is not yet stable.
-    > The [Khronos Group](https://www.khronos.org/) certifies WebGL implementations under certain [conformance rules](https://www.khronos.org/registry/webgl/sdk/tests/CONFORMANCE_RULES.txt).
+    > The [Khronos Group](https://www.khronos.org/) certifies WebGL implementations under certain [conformance rules](https://registry.khronos.org/webgl/sdk/tests/CONFORMANCE_RULES.txt).
 
 - `contextAttributes`
 
@@ -55,7 +50,7 @@ getContext(contextType, contextAttributes)
 
     - `alpha`
       - : Boolean that indicates if the canvas contains an alpha channel. If set to `false`, the browser now knows that the backdrop is always opaque, which can speed up drawing of transparent content and images then.
-    - `willReadFrequently` {{non-standard_inline}} (Gecko only)
+    - `willReadFrequently` {{non-standard_inline}} (Firefox only)
       - : Boolean that indicates whether or not a lot of read-back operations are planned.
         This will force the use of a software (instead of hardware accelerated) 2D canvas and can save memory when calling {{domxref("CanvasRenderingContext2D.getImageData", "getImageData()")}} frequently.
         This option is only available, if the flag `gfx.canvas.willReadFrequently.enable` is set to `true` (which, by default, is only the case for B2G/Firefox OS).
@@ -83,7 +78,7 @@ getContext(contextType, contextAttributes)
 
 A rendering context which is either a
 
-- {{domxref("CanvasRenderingContext2D")}} for `"2d"`,
+- {{domxref("OffscreenCanvasRenderingContext2D")}} for `"2d"`,
 - {{domxref("WebGLRenderingContext")}} for `"webgl"` and `"experimental-webgl"`,
 - {{domxref("WebGL2RenderingContext")}} for `"webgl2"` and `"experimental-webgl2"` {{experimental_inline}}, or
 - {{domxref("ImageBitmapRenderingContext")}} for `"bitmaprenderer"`.

@@ -1,18 +1,11 @@
 ---
-title: Animation.playbackRate
+title: "Animation: playbackRate property"
+short-title: playbackRate
 slug: Web/API/Animation/playbackRate
 page-type: web-api-instance-property
-tags:
-  - API
-  - Animation
-  - Interface
-  - Property
-  - Reference
-  - Web Animations
-  - playbackRate
-  - web animations api
 browser-compat: api.Animation.playbackRate
 ---
+
 {{APIRef("Web Animations")}}
 
 The **`Animation.playbackRate`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns or sets the playback rate of the animation.
@@ -23,7 +16,8 @@ Animations have a **playback rate** that provides a scaling factor from the rate
 
 Takes a number that can be 0, negative, or positive. Negative values reverse the animation. The value is a scaling factor, so for example a value of 2 would double the playback rate.
 
-> **Note:** Setting an animation's `playbackRate` to `0` effectively pauses the animation (however, its {{domxref("Animation.playstate", "playstate")}} does not necessarily become `paused`).
+> [!NOTE]
+> Setting an animation's `playbackRate` to `0` effectively pauses the animation (however, its {{domxref("Animation.playState", "playState")}} does not necessarily become `paused`).
 
 ## Examples
 
@@ -33,7 +27,7 @@ In the [Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ
 const shrinkAlice = () => {
   aliceChange.playbackRate = -1;
   aliceChange.play();
-}
+};
 
 // On tap or click, Alice will shrink.
 bottle.addEventListener("mousedown", shrinkAlice, false);
@@ -46,7 +40,7 @@ Contrariwise, clicking on the cake causes her to "grow," playing `aliceChange` f
 const growAlice = () => {
   aliceChange.playbackRate = 1;
   aliceChange.play();
-}
+};
 
 // On tap or click, Alice will grow.
 cake.addEventListener("mousedown", growAlice, false);
@@ -59,8 +53,8 @@ In another example, the [Red Queen's Race Game](https://codepen.io/rachelnabors/
 setInterval(() => {
   // Make sure the playback rate never falls below .4
 
-  if (redQueen_alice.playbackRate > .4) {
-    redQueen_alice.playbackRate *= .9;
+  if (redQueen_alice.playbackRate > 0.4) {
+    redQueen_alice.playbackRate *= 0.9;
   }
 }, 3000);
 ```
@@ -70,7 +64,7 @@ But clicking or tapping on them causes them to speed up by multiplying their `pl
 ```js
 const goFaster = () => {
   redQueen_alice.playbackRate *= 1.1;
-}
+};
 
 document.addEventListener("click", goFaster);
 document.addEventListener("touchstart", goFaster);

@@ -1,17 +1,13 @@
 ---
 title: Width
 slug: Web/HTTP/Headers/Width
-tags:
-  - Width
-  - Client hints
-  - Device Memory API
-  - HTTP
-  - HTTP Header
-  - Request header
-  - Deprecated
-  - Non-standard
+page-type: http-header
+status:
+  - deprecated
+  - non-standard
 browser-compat: http.headers.Width
 ---
+
 {{HTTPSidebar}}{{Deprecated_Header}}{{SecureContext_header}}{{Non-standard_Header}}
 
 The **`Width`** [device client hint](/en-US/docs/Web/HTTP/Client_hints#device_client_hints) request header field indicates the desired resource width in physical pixels — the intrinsic size of an image. The provided pixel value is a number rounded to the smallest following integer (i.e. ceiling value).
@@ -38,7 +34,7 @@ If the desired resource width is not known at the time of the request or the res
 
 If the `Width` header appears more than once in a message the last occurrence is used.
 
-> **Note:**
+> [!NOTE]
 >
 > - Client Hints are accessible only on secure origins (via TLS).
 > - A server has to opt in to receive the `Width` header from the client, by sending the {{HTTPHeader("Accept-CH")}} response header.
@@ -76,7 +72,7 @@ Width: 1920
 
 ## See also
 
-- [Improving user privacy and developer experience with User-Agent Client Hints](https://web.dev/user-agent-client-hints/) (web.dev)
+- [Improving user privacy and developer experience with User-Agent Client Hints](https://developer.chrome.com/docs/privacy-security/user-agent-client-hints) (developer.chrome.com)
 - Device client hints
 
   - {{HTTPHeader("Content-DPR")}}
@@ -85,4 +81,4 @@ Width: 1920
   - {{HTTPHeader("Viewport-Width")}}
 
 - {{HTTPHeader("Accept-CH")}}
-- [HTTP Caching > Varying responses](/en-US/docs/Web/HTTP/Caching#varying_responses) and {{HTTPHeader("Vary")}}
+- [HTTP Caching > Vary](/en-US/docs/Web/HTTP/Caching#vary) and {{HTTPHeader("Vary")}}

@@ -1,14 +1,10 @@
 ---
 title: text-emphasis-position
 slug: Web/CSS/text-emphasis-position
-tags:
-  - CSS
-  - CSS Property
-  - CSS Text Decoration
-  - Reference
-  - recipe:css-property
+page-type: css-property
 browser-compat: css.properties.text-emphasis-position
 ---
+
 {{CSSRef}}
 
 The **`text-emphasis-position`** [CSS](/en-US/docs/Web/CSS) property sets where emphasis marks are drawn. Like ruby text, if there isn't enough room for emphasis marks, the line height is increased.
@@ -109,7 +105,8 @@ The preferred position of emphasis marks depends on the language. In Japanese fo
   </tbody>
 </table>
 
-> **Note:** The `text-emphasis-position` cannot be set, and therefore are not reset either, using the {{cssxref("text-emphasis")}} shorthand property.
+> [!NOTE]
+> The `text-emphasis-position` cannot be set, and therefore are not reset either, using the {{cssxref("text-emphasis")}} shorthand property.
 
 ## Formal definition
 

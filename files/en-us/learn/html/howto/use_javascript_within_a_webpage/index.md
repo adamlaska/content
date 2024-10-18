@@ -1,12 +1,11 @@
 ---
 title: Use JavaScript within a webpage
 slug: Learn/HTML/Howto/Use_JavaScript_within_a_webpage
-tags:
-  - Beginner
-  - HTML
-  - JavaScript
-  - OpenPractices
+page-type: learn-faq
 ---
+
+{{QuickLinksWithSubpages("/en-US/docs/Learn/HTML/Howto")}}
+
 Take your webpages to the next level by harnessing JavaScript. Learn in this article how to trigger JavaScript right from your HTML documents.
 
 <table>
@@ -34,7 +33,8 @@ Take your webpages to the next level by harnessing JavaScript. Learn in this art
 
 {{Glossary("JavaScript")}} is a programming language mostly used client-side to make webpages interactive. You _can_ create amazing webpages without JavaScript, but JavaScript opens up a whole new level of possibilities.
 
-> **Note:** In this article we're going over the HTML code you need to make JavaScript take effect. If you want to learn JavaScript itself, you can start with our [JavaScript basics](/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) article. If you already know something about JavaScript or if you have a background with other programming languages, we suggest you jump directly into our [JavaScript Guide](/en-US/docs/Web/JavaScript/Guide).
+> [!NOTE]
+> In this article we're going over the HTML code you need to make JavaScript take effect. If you want to learn JavaScript itself, you can start with our [JavaScript basics](/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) article. If you already know something about JavaScript or if you have a background with other programming languages, we suggest you jump directly into our [JavaScript Guide](/en-US/docs/Web/JavaScript/Guide).
 
 ## How to trigger JavaScript from HTML
 
@@ -42,7 +42,7 @@ Within a browser, JavaScript doesn't do anything by itself. You run JavaScript f
 
 ### Linking an external script
 
-Usually, you'll be writing scripts in their own .js files. If you want to execute a .js script from your webpage, just use {{HTMLElement ('script')}} with an `src` attribute pointing to the script file, using its [URL](/en-US/docs/Learn/Common_questions/What_is_a_URL):
+Usually, you'll be writing scripts in their own .js files. If you want to execute a .js script from your webpage, just use {{HTMLElement ('script')}} with an `src` attribute pointing to the script file, using its [URL](/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL):
 
 ```html
 <script src="path/to/my/script.js"></script>
@@ -54,9 +54,9 @@ You may also add JavaScript code between `<script>` tags rather than providing a
 
 ```html
 <script>
-window.addEventListener('load', () => {
-  console.log('This function is executed once the page is fully loaded');
-});
+  window.addEventListener("load", () => {
+    console.log("This function is executed once the page is fully loaded");
+  });
 </script>
 ```
 
@@ -77,7 +77,7 @@ Accessibility is a major issue in any software development. JavaScript can make 
   - If you use pointer events (like mouse events or touch events), duplicate the functionality with keyboard events.
   - Test your site using a keyboard only.
 
-- **Don't set nor even guess time limits.** It takes extra time to navigate with the keyboard or hear content read out. You can hardly ever predict just how long it will take for users or browsers to complete an process (especially asynchronous actions such as loading resources).
+- **Don't set nor even guess time limits.** It takes extra time to navigate with the keyboard or hear content read out. You can hardly ever predict just how long it will take for users or browsers to complete a process (especially asynchronous actions such as loading resources).
 - **Keep animations subtle and brief with no flashing.** Flashing is annoying and can [cause seizures](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html). Additionally, if an animation lasts more than a couple seconds, give the user a way to cancel it.
 - **Let users initiate interactions.** That means, don't update content, redirect, or refresh automatically. Don't use carousels or display popups without warning.
 - **Have a plan B for users without JavaScript.** People may have JavaScript turned off to improve speed and security, and users often face network issues that prevent loading scripts. Moreover, third-party scripts (ads, tracking scripts, browser extensions) might break your scripts.

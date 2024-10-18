@@ -1,17 +1,12 @@
 ---
-title: WebGLRenderingContext.copyTexImage2D()
+title: "WebGLRenderingContext: copyTexImage2D() method"
+short-title: copyTexImage2D()
 slug: Web/API/WebGLRenderingContext/copyTexImage2D
 page-type: web-api-instance-method
-tags:
-  - API
-  - Method
-  - Reference
-  - Textures
-  - WebGL
-  - WebGLRenderingContext
 browser-compat: api.WebGLRenderingContext.copyTexImage2D
 ---
-{{APIRef("WebGL")}}
+
+{{APIRef("WebGL")}}{{AvailableInWorkers}}
 
 The **`WebGLRenderingContext.copyTexImage2D()`** method of the
 [WebGL API](/en-US/docs/Web/API/WebGL_API) copies pixels from the current
@@ -19,7 +14,7 @@ The **`WebGLRenderingContext.copyTexImage2D()`** method of the
 
 ## Syntax
 
-```js
+```js-nolint
 copyTexImage2D(target, level, internalformat, x, y, width, height, border)
 ```
 

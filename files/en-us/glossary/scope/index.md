@@ -1,11 +1,11 @@
 ---
 title: Scope
 slug: Glossary/Scope
-tags:
-  - CodingScripting
-  - Glossary
-  - JavaScript
+page-type: glossary-definition
 ---
+
+{{GlossarySidebar}}
+
 The **scope** is the current context of execution in which {{glossary("value","values")}} and expressions are "visible" or can be referenced. If a {{glossary("variable")}} or expression is not in the current scope, it will not be available for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.
 
 JavaScript has the following kinds of scopes:
@@ -14,7 +14,7 @@ JavaScript has the following kinds of scopes:
 - Module scope: The scope for code running in module mode.
 - Function scope: The scope created with a {{glossary("function")}}.
 
-In addition, variables declared with [`let`](/en-US/docs/Web/JavaScript/Reference/Statements/let) or [`const`](/en-US/docs/Web/JavaScript/Reference/Statements/const) can belong to an additional scope:
+In addition, identifiers declared with certain syntaxes, including [`let`](/en-US/docs/Web/JavaScript/Reference/Statements/let), [`const`](/en-US/docs/Web/JavaScript/Reference/Statements/const), [`class`](/en-US/docs/Web/JavaScript/Reference/Statements/class), or (in strict mode) [`function`](/en-US/docs/Web/JavaScript/Reference/Statements/function), can belong to an additional scope:
 
 - Block scope: The scope created with a pair of curly braces (a [block](/en-US/docs/Web/JavaScript/Reference/Statements/block)).
 
@@ -22,12 +22,12 @@ A {{glossary("function")}} creates a scope, so that (for example) a variable def
 
 ```js example-bad
 function exampleFunction() {
-  const x = "declared inside function";  // x can only be used in exampleFunction
+  const x = "declared inside function"; // x can only be used in exampleFunction
   console.log("Inside function");
   console.log(x);
 }
 
-console.log(x);  // Causes error
+console.log(x); // Causes error
 ```
 
 However, the following code is valid due to the variable being declared outside the function, making it global:
@@ -64,4 +64,5 @@ console.log(x); // ReferenceError: x is not defined
 
 ## See also
 
-- [Scope (computer science)](https://en.wikipedia.org/wiki/Scope_(computer_science)) on Wikipedia
+- [Scope (computer science)](<https://en.wikipedia.org/wiki/Scope_(computer_science)>) on Wikipedia
+- [Block scoping rules](/en-US/docs/Web/JavaScript/Reference/Statements/block#block_scoping_rules_with_let_const_class_or_function_declaration_in_strict_mode)

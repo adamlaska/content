@@ -1,10 +1,8 @@
 ---
-title: CharacterData.remove()
+title: "CharacterData: remove() method"
+short-title: remove()
 slug: Web/API/CharacterData/remove
 page-type: web-api-instance-method
-tags:
-  - Method
-  - Reference
 browser-compat: api.CharacterData.remove
 ---
 
@@ -14,8 +12,8 @@ The **`remove()`** method of the {{domxref("CharacterData")}} removes the text c
 
 ## Syntax
 
-```js
-remove();
+```js-nolint
+remove()
 ```
 
 ### Parameters
@@ -32,9 +30,9 @@ None.
 
 ```js
 const span = document.querySelector("span");
-const textnode = span.nextSibling;
+const textNode = span.nextSibling;
 
-textnode.remove(); // Removes the text
+textNode.remove(); // Removes the text
 ```
 
 {{EmbedLiveSample("Example", "100%", 50)}}
@@ -49,5 +47,6 @@ textnode.remove(); // Removes the text
 
 ## See also
 
-- {{domxref("Element.remove()")}}
 - {{domxref("CharacterData.deleteData()")}}
+- {{domxref("DocumentType.remove()")}}
+- {{domxref("Element.remove()")}}

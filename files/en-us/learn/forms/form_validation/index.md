@@ -1,16 +1,7 @@
 ---
 title: Client-side form validation
 slug: Learn/Forms/Form_validation
-tags:
-  - Beginner
-  - Example
-  - Forms
-  - Guide
-  - HTML
-  - JavaScript
-  - Learn
-  - Web
-  - regex
+page-type: learn-module-chapter
 ---
 
 {{LearnSidebar}}{{PreviousMenuNext("Learn/Forms/UI_pseudo-classes", "Learn/Forms/Sending_and_retrieving_form_data", "Learn/HTML/Forms")}}
@@ -69,7 +60,8 @@ There are three main reasons:
 - **We want to protect our users' data**. Forcing our users to enter secure passwords makes it easier to protect their account information.
 - **We want to protect ourselves**. There are many ways that malicious users can misuse unprotected forms to damage the application. See [Website security](/en-US/docs/Learn/Server-side/First_steps/Website_security).
 
-  > **Warning:** Never trust data passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user can still alter the network request.
+  > [!WARNING]
+  > Never trust data passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user can still alter the network request.
 
 ## Different types of client-side validation
 
@@ -89,8 +81,8 @@ We've seen many of these earlier in the course, but to recap:
 - [`required`](/en-US/docs/Web/HTML/Attributes/required): Specifies whether a form field needs to be filled in before the form can be submitted.
 - [`minlength`](/en-US/docs/Web/HTML/Attributes/minlength) and [`maxlength`](/en-US/docs/Web/HTML/Attributes/maxlength): Specifies the minimum and maximum length of textual data (strings).
 - [`min`](/en-US/docs/Web/HTML/Attributes/min) and [`max`](/en-US/docs/Web/HTML/Attributes/max): Specifies the minimum and maximum values of numerical input types.
-- `type`: Specifies whether the data needs to be a number, an email address, or some other specific preset type.
-- [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern): Specifies a [regular expression](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) that defines a pattern the entered data needs to follow.
+- [`type`](/en-US/docs/Web/HTML/Element/input#input_types): Specifies whether the data needs to be a number, an email address, or some other specific preset type.
+- [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern): Specifies a [regular expression](/en-US/docs/Web/JavaScript/Guide/Regular_expressions) that defines a pattern the entered data needs to follow.
 
 If the data entered in a form field follows all of the rules specified by the above attributes, it is considered valid.
 If not, it is considered invalid.
@@ -105,7 +97,8 @@ When an element is invalid, the following things are true:
 - The element matches the {{cssxref(":invalid")}} CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., {{cssxref(":out-of-range")}}) depending on the error, which lets you apply a specific style to invalid elements.
 - If the user tries to send the data, the browser will block the form and display an error message.
 
-> **Note:** There are several errors that will prevent the form from being submitted, including a {{domxref('validityState.badInput', 'badInput')}}, {{domxref('validityState.patternMismatch','patternMismatch')}}, {{domxref('validityState.rangeOverflow','rangeOverflow')}} or {{domxref('validityState.rangeUnderflow','rangeUnderflow')}}, {{domxref('validityState.stepMismatch','stepMismatch')}}, {{domxref('validityState.tooLong','tooLong')}} or {{domxref('validityState.tooShort','tooShort')}}, {{domxref('validityState.typeMismatch','typeMismatch')}}, {{domxref('validityState.valueMissing','valueMissing')}}, or a {{domxref('validityState.customError','customError')}}.
+> [!NOTE]
+> There are several errors that will prevent the form from being submitted, including a {{domxref('validityState.badInput', 'badInput')}}, {{domxref('validityState.patternMismatch','patternMismatch')}}, {{domxref('validityState.rangeOverflow','rangeOverflow')}} or {{domxref('validityState.rangeUnderflow','rangeUnderflow')}}, {{domxref('validityState.stepMismatch','stepMismatch')}}, {{domxref('validityState.tooLong','tooLong')}} or {{domxref('validityState.tooShort','tooShort')}}, {{domxref('validityState.typeMismatch','typeMismatch')}}, {{domxref('validityState.valueMissing','valueMissing')}}, or a {{domxref('validityState.customError','customError')}}.
 
 ## Built-in form validation examples
 
@@ -177,34 +170,36 @@ We also added a background gradient when the input is required _and_ invalid. Tr
 
 {{EmbedLiveSample("The_required_attribute", "100%", 80)}}
 
-> **Note:** You can find this example live on GitHub as [fruit-validation.html](https://mdn.github.io/learning-area/html/forms/form-validation/fruit-required.html). See also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/fruit-required.html).
+> [!NOTE]
+> You can find this example live on GitHub as [fruit-validation.html](https://mdn.github.io/learning-area/html/forms/form-validation/fruit-required.html). See also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/fruit-required.html).
 
 Try submitting the form without a value.
 Note how the invalid input gets focus, a default error message ("Please fill out this field") appears, and the form is prevented from being sent.
 
 The presence of the `required` attribute on any element that supports this attribute means the element matches the {{cssxref(':required')}} pseudo-class whether it has a value or not. If the {{HTMLElement("input")}} has no value, the `input` will match the {{cssxref(':invalid')}} pseudo-class.
 
-> **Note:** For good user experience, indicate to the user when form fields are required.
+> [!NOTE]
+> For good user experience, indicate to the user when form fields are required.
 > It isn't only good user experience, it is required by WCAG [accessibility](/en-US/docs/Learn/Accessibility) guidelines.
 > Also, only require users to input data you actually need: For example, why do you really need to know someone's gender or title?
 
 ### Validating against a regular expression
 
-Another useful validation feature is the [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern) attribute, which expects a [Regular Expression](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) as its value.
-A regular expression (regex) is a pattern that can be used to match character combinations in text strings, so regexps are ideal for form validation and serve a variety of other uses in JavaScript.
+Another useful validation feature is the [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern) attribute, which expects a [Regular Expression](/en-US/docs/Web/JavaScript/Guide/Regular_expressions) as its value.
+A regular expression (regexp) is a pattern that can be used to match character combinations in text strings, so regexps are ideal for form validation and serve a variety of other uses in JavaScript.
 
 Regexps are quite complex, and we don't intend to teach you them exhaustively in this article.
 Below are some examples to give you a basic idea of how they work.
 
 - `a` — Matches one character that is `a` (not `b`, not `aa`, and so on).
 - `abc` — Matches `a`, followed by `b`, followed by `c`.
-- `ab?c`—Matches `a`, optionally followed by a single `b`, followed by `c`. (`ac` or `abc`)
-- `ab*c`—Matches `a`, optionally followed by any number of `b`s, followed by `c`. (`ac`, `abc`, `abbbbbc`, and so on).
+- `ab?c` — Matches `a`, optionally followed by a single `b`, followed by `c`. (`ac` or `abc`)
+- `ab*c` — Matches `a`, optionally followed by any number of `b`s, followed by `c`. (`ac`, `abc`, `abbbbbc`, and so on).
 - `a|b` — Matches one character that is `a` or `b`.
 - `abc|xyz` — Matches exactly `abc` or exactly `xyz` (but not `abcxyz` or `a` or `y`, and so on).
 
 There are many more possibilities that we don't cover here.
-For a complete list and many examples, consult our [Regular expressions](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) documentation.
+For a complete list and many examples, consult our [Regular expression](/en-US/docs/Web/JavaScript/Guide/Regular_expressions) documentation.
 
 Let's implement an example.
 Update your HTML to add a [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern) attribute like this:
@@ -231,7 +226,8 @@ This gives us the following update — try it out:
 
 {{EmbedLiveSample("Validating_against_a_regular_expression", "100%", 80)}}
 
-> **Note:** You can find this example live on GitHub as [fruit-pattern.html](https://mdn.github.io/learning-area/html/forms/form-validation/fruit-pattern.html) (see also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/fruit-pattern.html).)
+> [!NOTE]
+> You can find this example live on GitHub as [fruit-pattern.html](https://mdn.github.io/learning-area/html/forms/form-validation/fruit-pattern.html) (see also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/fruit-pattern.html).)
 
 In this example, the {{HTMLElement("input")}} element accepts one of four possible values: the strings "banana", "Banana", "cherry", or "Cherry". Regular expressions are case-sensitive, but we've made it support capitalized as well as lower-case versions using an extra "Aa" pattern nested inside square brackets.
 
@@ -241,9 +237,11 @@ Make them fruit-related where possible so that your examples make sense!
 
 If a non-empty value of the {{HTMLElement("input")}} doesn't match the regular expression's pattern, the `input` will match the {{cssxref(':invalid')}} pseudo-class.
 
-> **Note:** Some {{HTMLElement("input")}} element types don't need a [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern) attribute to be validated against a regular expression. Specifying the `email` type, for example, validates the inputs value against a well-formed email address pattern or a pattern matching a comma-separated list of email addresses if it has the [`multiple`](/en-US/docs/Web/HTML/Attributes/multiple) attribute.
+> [!NOTE]
+> Some {{HTMLElement("input")}} element types don't need a [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern) attribute to be validated against a regular expression. Specifying the `email` type, for example, validates the inputs value against a well-formed email address pattern or a pattern matching a comma-separated list of email addresses if it has the [`multiple`](/en-US/docs/Web/HTML/Attributes/multiple) attribute.
 
-> **Note:** The {{HTMLElement("textarea")}} element doesn't support the [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern) attribute.
+> [!NOTE]
+> The {{HTMLElement("textarea")}} element doesn't support the [`pattern`](/en-US/docs/Web/HTML/Attributes/pattern) attribute.
 
 ### Constraining the length of your entries
 
@@ -251,7 +249,10 @@ You can constrain the character length of all text fields created by {{HTMLEleme
 A field is invalid if it has a value and that value has fewer characters than the [`minlength`](/en-US/docs/Web/HTML/Attributes/minlength) value or more than the [`maxlength`](/en-US/docs/Web/HTML/Attributes/maxlength) value.
 
 Browsers often don't let the user type a longer value than expected into text fields. A better user experience than just using `maxlength` is to also provide character count feedback in an accessible manner and let them edit their content down to size.
-An example of this is the character limit seen on Twitter when Tweeting. JavaScript, including [solutions using `maxlength`](https://github.com/mimo84/bootstrap-maxlength), can be used to provide this.
+An example of this is the character limit when posting on social media. JavaScript, including [solutions using `maxlength`](https://github.com/mimo84/bootstrap-maxlength), can be used to provide this.
+
+> [!NOTE]
+> Length constraints are never reported if the value is set programmatically. They are only reported for user-provided input.
 
 ### Constraining the values of your entries
 
@@ -309,7 +310,8 @@ Here is the example running live:
 
 {{EmbedLiveSample("Constraining_the_values_of_your_entries", "100%", 100)}}
 
-> **Note:** You can find this example live on GitHub as [fruit-length.html](https://mdn.github.io/learning-area/html/forms/form-validation/fruit-length.html). See also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/fruit-length.html).
+> [!NOTE]
+> You can find this example live on GitHub as [fruit-length.html](https://mdn.github.io/learning-area/html/forms/form-validation/fruit-length.html). See also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/fruit-length.html).
 
 > **Note:** `<input type="number">` (and other types, such as `range` and `date`) can also take a [`step`](/en-US/docs/Web/HTML/Attributes/step) attribute, which specifies what increment the value will go up or down by when the input controls are used (such as the up and down number buttons).
 > In the above example we've not included a `step` attribute, so the value defaults to `1`. This means that floats, like 3.2, will also show as invalid.
@@ -321,16 +323,22 @@ First, some HTML:
 
 ```html
 <form>
-  <p>
-    <fieldset>
-      <legend>Do you have a driver's license?<span aria-label="required">*</span></legend>
-      <!-- While only one radio button in a same-named group can be selected at a time,
-           and therefore only one radio button in a same-named group having the "required"
-           attribute suffices in making a selection a requirement -->
-      <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label>
-      <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
-    </fieldset>
-  </p>
+  <fieldset>
+    <legend>
+      Do you have a driver's license?<span aria-label="required">*</span>
+    </legend>
+    <!-- While only one radio button in a same-named group can be selected at a time,
+         and therefore only one radio button in a same-named group having the "required"
+         attribute suffices in making a selection a requirement -->
+    <input type="radio" required name="driver" id="r1" value="yes" /><label
+      for="r1"
+      >Yes</label
+    >
+    <input type="radio" required name="driver" id="r2" value="no" /><label
+      for="r2"
+      >No</label
+    >
+  </fieldset>
   <p>
     <label for="n1">How old are you?</label>
     <!-- The pattern attribute can act as a fallback for browsers which
@@ -338,13 +346,26 @@ First, some HTML:
          Please note that browsers that support the pattern attribute will make it
          fail silently when used with a number field.
          Its usage here acts only as a fallback -->
-    <input type="number" min="12" max="120" step="1" id="n1" name="age"
-           pattern="\d+">
+    <input
+      type="number"
+      min="12"
+      max="120"
+      step="1"
+      id="n1"
+      name="age"
+      pattern="\d+" />
   </p>
   <p>
-    <label for="t1">What's your favorite fruit?<span aria-label="required">*</span></label>
-    <input type="text" id="t1" name="fruit" list="l1" required
-           pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+    <label for="t1"
+      >What's your favorite fruit?<span aria-label="required">*</span></label
+    >
+    <input
+      type="text"
+      id="t1"
+      name="fruit"
+      list="l1"
+      required
+      pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range" />
     <datalist id="l1">
       <option>Banana</option>
       <option>Cherry</option>
@@ -355,8 +376,8 @@ First, some HTML:
     </datalist>
   </p>
   <p>
-    <label for="t2">What's your e-mail address?</label>
-    <input type="email" id="t2" name="email">
+    <label for="t2">What's your email address?</label>
+    <input type="email" id="t2" name="email" />
   </p>
   <p>
     <label for="t3">Leave a short message</label>
@@ -403,9 +424,10 @@ This renders as follows:
 
 {{EmbedLiveSample("Full_example", "100%", 420)}}
 
-See [Validation-related attributes](/en-US/docs/Web/Guide/HTML/Constraint_validation#validation-related_attributes) for a complete list of attributes that can be used to constrain input values and the input types that support them.
+See [Validation-related attributes](/en-US/docs/Web/HTML/Constraint_validation#validation-related_attributes) for a complete list of attributes that can be used to constrain input values and the input types that support them.
 
-> **Note:** You can find this example live on GitHub as [full-example.html](https://mdn.github.io/learning-area/html/forms/form-validation/full-example.html) (see also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/full-example.html).)
+> [!NOTE]
+> You can find this example live on GitHub as [full-example.html](https://mdn.github.io/learning-area/html/forms/form-validation/full-example.html) (see also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/full-example.html).)
 
 ## Validating forms using JavaScript
 
@@ -414,7 +436,7 @@ In this section we will look at the different ways to do this.
 
 ### The Constraint Validation API
 
-Most browsers support the [Constraint Validation API](/en-US/docs/Web/API/Constraint_validation), which consists of a set of methods and properties available on the following form element DOM interfaces:
+The Constraint Validation API consists of a set of methods and properties available on the following form element DOM interfaces:
 
 - [`HTMLButtonElement`](/en-US/docs/Web/API/HTMLButtonElement) (represents a [`<button>`](/en-US/docs/Web/HTML/Element/button) element)
 - [`HTMLFieldSetElement`](/en-US/docs/Web/API/HTMLFieldSetElement) (represents a [`<fieldset>`](/en-US/docs/Web/HTML/Element/fieldset) element)
@@ -423,26 +445,26 @@ Most browsers support the [Constraint Validation API](/en-US/docs/Web/API/Constr
 - [`HTMLSelectElement`](/en-US/docs/Web/API/HTMLSelectElement) (represents a [`<select>`](/en-US/docs/Web/HTML/Element/select) element)
 - [`HTMLTextAreaElement`](/en-US/docs/Web/API/HTMLTextAreaElement) (represents a [`<textarea>`](/en-US/docs/Web/HTML/Element/textarea) element)
 
-The Constraint validation API makes the following properties available on the above elements.
+The Constraint Validation API makes the following properties available on the above elements.
 
 - `validationMessage`: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (`willValidate` is `false`) or the element's value satisfies its constraints (is valid), this will return an empty string.
 - `validity`: Returns a `ValidityState` object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the {{domxref("ValidityState")}} reference page; below is listed a few of the more common ones:
 
-  - {{domxref("ValidityState.patternMismatch", "patternMismatch")}}: Returns `true` if the value does not match the specified {{htmlattrxref("pattern", "input")}}, and `false` if it does match. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
-  - {{domxref("ValidityState.tooLong", "tooLong")}}: Returns `true` if the value is longer than the maximum length specified by the {{htmlattrxref("maxlength", "input")}} attribute, or `false` if it is shorter than or equal to the maximum. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
-  - {{domxref("ValidityState.tooShort", "tooShort")}}: Returns `true` if the value is shorter than the minimum length specified by the {{htmlattrxref("minlength", "input")}} attribute, or `false` if it is greater than or equal to the minimum. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
-  - {{domxref("ValidityState.rangeOverflow", "rangeOverflow")}}: Returns `true` if the value is greater than the maximum specified by the {{htmlattrxref("max", "input")}} attribute, or `false` if it is less than or equal to the maximum. If true, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
-  - {{domxref("ValidityState.rangeUnderflow", "rangeUnderflow")}}: Returns `true` if the value is less than the minimum specified by the {{htmlattrxref("min", "input")}} attribute, or `false` if it is greater than or equal to the minimum. If true, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
-  - {{domxref("ValidityState.typeMismatch", "typeMismatch")}}: Returns `true` if the value is not in the required syntax (when {{htmlattrxref("type", "input")}} is `email` or `url`), or `false` if the syntax is correct. If `true`, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+  - {{domxref("ValidityState.patternMismatch", "patternMismatch")}}: Returns `true` if the value does not match the specified [`pattern`](/en-US/docs/Web/HTML/Element/input#pattern), and `false` if it does match. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+  - {{domxref("ValidityState.tooLong", "tooLong")}}: Returns `true` if the value is longer than the maximum length specified by the [`maxlength`](/en-US/docs/Web/HTML/Element/input#maxlength) attribute, or `false` if it is shorter than or equal to the maximum. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+  - {{domxref("ValidityState.tooShort", "tooShort")}}: Returns `true` if the value is shorter than the minimum length specified by the [`minlength`](/en-US/docs/Web/HTML/Element/input#minlength) attribute, or `false` if it is greater than or equal to the minimum. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+  - {{domxref("ValidityState.rangeOverflow", "rangeOverflow")}}: Returns `true` if the value is greater than the maximum specified by the [`max`](/en-US/docs/Web/HTML/Element/input#max) attribute, or `false` if it is less than or equal to the maximum. If true, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
+  - {{domxref("ValidityState.rangeUnderflow", "rangeUnderflow")}}: Returns `true` if the value is less than the minimum specified by the [`min`](/en-US/docs/Web/HTML/Element/input#min) attribute, or `false` if it is greater than or equal to the minimum. If true, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
+  - {{domxref("ValidityState.typeMismatch", "typeMismatch")}}: Returns `true` if the value is not in the required syntax (when [`type`](/en-US/docs/Web/HTML/Element/input#type) is `email` or `url`), or `false` if the syntax is correct. If `true`, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
   - `valid`: Returns `true` if the element meets all its validation constraints, and is therefore considered to be valid, or `false` if it fails any constraint. If true, the element matches the {{cssxref(":valid")}} CSS pseudo-class; the {{cssxref(":invalid")}} CSS pseudo-class otherwise.
-  - `valueMissing`: Returns `true` if the element has a {{htmlattrxref("required", "input")}} attribute, but no value, or `false` otherwise. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+  - `valueMissing`: Returns `true` if the element has a [`required`](/en-US/docs/Web/HTML/Element/input#required) attribute, but no value, or `false` otherwise. If true, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
 
 - `willValidate`: Returns `true` if the element will be validated when the form is submitted; `false` otherwise.
 
 The Constraint Validation API also makes the following methods available on the above elements and the [`form`](/en-US/docs/Web/HTML/Element/form) element.
 
 - `checkValidity()`: Returns `true` if the element's value has no validity problems; `false` otherwise. If the element is invalid, this method also fires an [`invalid` event](/en-US/docs/Web/API/HTMLInputElement/invalid_event) on the element.
-- `reportValidity()`: Reports invalid field(s) using events. Useful in combination with `preventDefault()` in an `onSubmit` event handler
+- `reportValidity()`: Reports invalid field(s) using events. This method is useful in combination with `preventDefault()` in an `onSubmit` event handler.
 - `setCustomValidity(message)`: Adds a custom error message to the element; if you set a custom error message, the element is considered to be invalid, and the specified error is displayed. This lets you use JavaScript code to establish a validation failure other than those offered by the standard HTML validation constraints. The message is shown to the user when reporting the problem.
 
 #### Implementing a customized error message
@@ -456,7 +478,7 @@ These automated messages have two drawbacks:
 
 ![Example of an error message with Firefox in French on an English page](error-firefox-win7.png)
 
-Customizing these error messages is one of the most common use cases of the [constraint validation API](/en-US/docs/Web/API/Constraint_validation).
+Customizing these error messages is one of the most common use cases of the Constraint Validation API.
 Let's work through a simple example of how to do this.
 
 We'll start with some simple HTML (feel free to put this in a blank HTML file; use a fresh copy of [fruit-start.html](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/fruit-start.html) as a basis, if you like):
@@ -464,7 +486,7 @@ We'll start with some simple HTML (feel free to put this in a blank HTML file; u
 ```html
 <form>
   <label for="mail">
-    I would like you to provide me with an e-mail address:
+    I would like you to provide me with an email address:
   </label>
   <input type="email" id="mail" name="mail" />
   <button>Submit</button>
@@ -478,8 +500,7 @@ const email = document.getElementById("mail");
 
 email.addEventListener("input", (event) => {
   if (email.validity.typeMismatch) {
-    email.setCustomValidity("I am expecting an e-mail address!");
-    email.reportValidity();
+    email.setCustomValidity("I am expecting an email address!");
   } else {
     email.setCustomValidity("");
   }
@@ -488,15 +509,16 @@ email.addEventListener("input", (event) => {
 
 Here we store a reference to the email input, then add an event listener to it that runs the contained code each time the value inside the input is changed.
 
-Inside the contained code, we check whether the email input's `validity.typeMismatch` property returns `true`, meaning that the contained value doesn't match the pattern for a well-formed email address. If so, we call the {{domxref("HTMLInputElement.setCustomValidity()","setCustomValidity()")}} method with a custom message which is displayed by calling {{domxref("HTMLInputElement.reportValidity","reportValidity()")}}. This renders the input invalid, so that when you try to submit the form, submission fails and the custom error message is displayed.
+Inside the contained code, we check whether the email input's `validity.typeMismatch` property returns `true`, meaning that the contained value doesn't match the pattern for a well-formed email address. If so, we call the {{domxref("HTMLInputElement.setCustomValidity()","setCustomValidity()")}} method with a custom message. This renders the input invalid, so that when you try to submit the form, submission fails and the custom error message is displayed.
 
-If the `validity.typeMismatch` property returns `false`, we call the `setCustomValidity()` method an empty string. This renders the input valid, so the form will submit.
+If the `validity.typeMismatch` property returns `false`, we call the `setCustomValidity()` method with an empty string. This renders the input valid, so the form will submit.
 
 You can try it out below:
 
-{{EmbedGHLiveSample("learning-area/html/forms/form-validation/custom-error-message.html", '100%', 80)}}
+{{EmbedGHLiveSample("learning-area/html/forms/form-validation/custom-error-message.html", '100%', 120)}}
 
-> **Note:** You can find this example live on GitHub as [custom-error-message.html](https://mdn.github.io/learning-area/html/forms/form-validation/custom-error-message.html) (see also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/custom-error-message.html).)
+> [!NOTE]
+> You can find this example live on GitHub as [custom-error-message.html](https://mdn.github.io/learning-area/html/forms/form-validation/custom-error-message.html) (see also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/custom-error-message.html).)
 
 #### A more detailed example
 
@@ -517,7 +539,7 @@ First, the HTML. Again, feel free to build this along with us:
 </form>
 ```
 
-This simple form uses the [`novalidate`](/en-US/docs/Web/HTML/Attributes/novalidate) attribute to turn off the browser's automatic validation; this lets our script take control over validation.
+This simple form uses the [`novalidate`](/en-US/docs/Web/HTML/Element/form#novalidate) attribute to turn off the browser's automatic validation; this lets our script take control over validation.
 However, this doesn't disable support for the constraint validation API nor the application of CSS pseudo-classes like {{cssxref(":valid")}}, etc.
 That means that even though the browser doesn't automatically check the validity of the form before sending its data, you can still do it yourself and style the form accordingly.
 
@@ -526,7 +548,8 @@ Our input to validate is an [`<input type="email">`](/en-US/docs/Web/HTML/Elemen
 We are aiming to show the error messages inside a `<span>` element.
 The [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) attribute is set on that `<span>` to make sure that our custom error message will be presented to everyone, including it being read out to screen reader users.
 
-> **Note:** A key point here is that setting the `novalidate` attribute on the form is what stops the form from showing its own error message bubbles, and allows us to instead display the custom error messages in the DOM in some manner of our own choosing.
+> [!NOTE]
+> A key point here is that setting the `novalidate` attribute on the form is what stops the form from showing its own error message bubbles, and allows us to instead display the custom error messages in the DOM in some manner of our own choosing.
 
 Now onto some basic CSS to improve the look of the form slightly, and provide some visual feedback when the input data is invalid:
 
@@ -621,11 +644,11 @@ function showError() {
   if (email.validity.valueMissing) {
     // If the field is empty,
     // display the following error message.
-    emailError.textContent = "You need to enter an e-mail address.";
+    emailError.textContent = "You need to enter an email address.";
   } else if (email.validity.typeMismatch) {
     // If the field doesn't contain an email address,
     // display the following error message.
-    emailError.textContent = "Entered value needs to be an e-mail address.";
+    emailError.textContent = "Entered value needs to be an email address.";
   } else if (email.validity.tooShort) {
     // If the data is too short,
     // display the following error message.
@@ -650,11 +673,10 @@ Here is the live result:
 
 {{EmbedGHLiveSample("learning-area/html/forms/form-validation/detailed-custom-validation.html", '100%', 150)}}
 
-> **Note:** You can find this example live on GitHub as [detailed-custom-validation.html](https://mdn.github.io/learning-area/html/forms/form-validation/detailed-custom-validation.html). See also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/detailed-custom-validation.html).
+> [!NOTE]
+> You can find this example live on GitHub as [detailed-custom-validation.html](https://mdn.github.io/learning-area/html/forms/form-validation/detailed-custom-validation.html). See also the [source code](https://github.com/mdn/learning-area/blob/main/html/forms/form-validation/detailed-custom-validation.html).
 
 The constraint validation API gives you a powerful tool to handle form validation, letting you have enormous control over the user interface above and beyond what you can do with HTML and CSS alone.
-
-> **Note:** For further information, see our [Constraint validation guide](/en-US/docs/Web/Guide/HTML/Constraint_validation), and the [Constraint Validation API](/en-US/docs/Web/API/Constraint_validation) reference.
 
 ### Validating forms without a built-in API
 
@@ -674,10 +696,9 @@ To validate a form, ask yourself a few questions:
     You should offer up-front suggestions so they know what's expected, as well as clear error messages.
     If you want to dig into form validation UI requirements, here are some useful articles you should read:
 
-    - SmashingMagazine: [Form-Field Validation: The Errors-Only Approach](https://www.smashingmagazine.com/2012/06/form-field-validation-errors-only-approach/)
-    - SmashingMagazine: [Web Form Validation: Best Practices and Tutorials](https://www.smashingmagazine.com/2009/07/web-form-validation-best-practices-and-tutorials/)
-    - WebFX: [10 Tips for Optimizing Web Form Submission Usability](https://www.webfx.com/blog/web-design/10-tips-for-optimizing-web-form-submission-usability/)
-    - A List Apart: [Inline Validation in Web Forms](https://alistapart.com/article/inline-validation-in-web-forms/)
+    - [Help users enter the right data in forms](https://web.dev/learn/forms/validation/)
+    - [Validating input](https://www.w3.org/WAI/tutorials/forms/validation/)
+    - [How to Report Errors in Forms: 10 Design Guidelines](https://www.nngroup.com/articles/errors-forms-design-guidelines/)
 
 #### An example that doesn't use the constraint validation API
 
@@ -698,7 +719,7 @@ The HTML is almost the same; we just removed the HTML validation features.
 </form>
 ```
 
-Similarly, the CSS doesn't need to change very much; we've just turned the {{cssxref(":invalid")}} CSS pseudo-class into a real class and avoided using the attribute selector that doesn't work on Internet Explorer 6.
+Similarly, the CSS doesn't need to change very much; we've just turned the {{cssxref(":invalid")}} CSS pseudo-class into a real class and avoided using the attribute selector.
 
 ```css
 body {
@@ -716,7 +737,7 @@ p * {
   display: block;
 }
 
-input.mail {
+input#mail {
   appearance: none;
   width: 100%;
   border: 1px solid #333;
@@ -729,7 +750,7 @@ input.mail {
 }
 
 /* This is our style for the invalid fields */
-input.invalid {
+input#mail.invalid {
   border-color: #900;
   background-color: #fdd;
 }
@@ -771,7 +792,7 @@ const emailRegExp =
 // explicitly set the valid/invalid class on our email field
 window.addEventListener("load", () => {
   // Here, we test if the field is empty (remember, the field is not required)
-  // If it is not, we check if its content is a well-formed e-mail address.
+  // If it is not, we check if its content is a well-formed email address.
   const isValid = email.value.length === 0 || emailRegExp.test(email.value);
   email.className = isValid ? "valid" : "invalid";
 });
@@ -795,7 +816,7 @@ form.addEventListener("submit", (event) => {
   const isValid = email.value.length === 0 || emailRegExp.test(email.value);
   if (!isValid) {
     email.className = "invalid";
-    error.textContent = "I expect an e-mail, darling!";
+    error.textContent = "I expect an email, darling!";
     error.className = "error active";
   } else {
     email.className = "valid";
@@ -828,19 +849,6 @@ Once you have checked that the form is filled out correctly, the form can be sub
 We'll cover [sending form data](/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data) next.
 
 {{PreviousMenuNext("Learn/Forms/UI_pseudo-classes", "Learn/Forms/Sending_and_retrieving_form_data", "Learn/HTML/Forms")}}
-
-## In this module
-
-- [Your first form](/en-US/docs/Learn/Forms/Your_first_form)
-- [How to structure a web form](/en-US/docs/Learn/Forms/How_to_structure_a_web_form)
-- [Basic native form controls](/en-US/docs/Learn/Forms/Basic_native_form_controls)
-- [The HTML5 input types](/en-US/docs/Learn/Forms/HTML5_input_types)
-- [Other form controls](/en-US/docs/Learn/Forms/Other_form_controls)
-- [Styling web forms](/en-US/docs/Learn/Forms/Styling_web_forms)
-- [Advanced form styling](/en-US/docs/Learn/Forms/Advanced_form_styling)
-- [UI pseudo-classes](/en-US/docs/Learn/Forms/UI_pseudo-classes)
-- [Client-side form validation](/en-US/docs/Learn/Forms/Form_validation)
-- [Sending form data](/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data)
 
 ### Advanced Topics
 

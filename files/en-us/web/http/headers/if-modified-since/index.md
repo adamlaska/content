@@ -1,14 +1,10 @@
 ---
 title: If-Modified-Since
 slug: Web/HTTP/Headers/If-Modified-Since
-tags:
-  - Conditional Requests
-  - HTTP
-  - HTTP Header
-  - Reference
-  - Request header
+page-type: http-header
 browser-compat: http.headers.If-Modified-Since
 ---
+
 {{HTTPSidebar}}
 
 The **`If-Modified-Since`** request HTTP header makes the

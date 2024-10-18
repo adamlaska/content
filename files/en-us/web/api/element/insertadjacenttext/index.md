@@ -1,24 +1,18 @@
 ---
-title: Element.insertAdjacentText()
+title: "Element: insertAdjacentText() method"
+short-title: insertAdjacentText()
 slug: Web/API/Element/insertAdjacentText
 page-type: web-api-instance-method
-tags:
-  - API
-  - DOM
-  - Element
-  - Gecko
-  - Method
-  - Reference
-  - insertAdjacentText
 browser-compat: api.Element.insertAdjacentText
 ---
+
 {{APIRef("DOM")}}
 
 The **`insertAdjacentText()`** method of the {{domxref("Element")}} interface, given a relative position and a string, inserts a new text node at the given position relative to the element it is called from.
 
 ## Syntax
 
-```js
+```js-nolint
 insertAdjacentText(where, data)
 ```
 
@@ -57,19 +51,20 @@ None ({{jsxref("undefined")}}).
 <!-- afterend -->
 ```
 
-> **Note:** The `beforebegin` and
+> [!NOTE]
+> The `beforebegin` and
 > `afterend` positions work only if the node is in a tree and has an element
 > parent.
 
 ## Examples
 
 ```js
-beforeBtn.addEventListener('click', () => {
-  para.insertAdjacentText('afterbegin',textInput.value);
+beforeBtn.addEventListener("click", () => {
+  para.insertAdjacentText("afterbegin", textInput.value);
 });
 
-afterBtn.addEventListener('click', () => {
-  para.insertAdjacentText('beforeend',textInput.value);
+afterBtn.addEventListener("click", () => {
+  para.insertAdjacentText("beforeend", textInput.value);
 });
 ```
 
