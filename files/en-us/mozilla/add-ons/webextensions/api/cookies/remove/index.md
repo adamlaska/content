@@ -1,19 +1,11 @@
 ---
 title: cookies.remove()
 slug: Mozilla/Add-ons/WebExtensions/API/cookies/remove
-tags:
-  - API
-  - Add-ons
-  - Cookies
-  - Extensions
-  - Method
-  - Non-standard
-  - Reference
-  - WebExtensions
-  - remove
+page-type: webextension-api-function
 browser-compat: webextensions.api.cookies.remove
 ---
-{{AddonSidebar()}}
+
+{{AddonSidebar}}
 
 The **`remove()`** method of the {{WebExtAPIRef("cookies")}} API deletes a cookie, given its name and URL.
 
@@ -23,7 +15,7 @@ This is an asynchronous function that returns a [`Promise`](/en-US/docs/Web/Java
 
 ## Syntax
 
-```js
+```js-nolint
 let removing = browser.cookies.remove(
   details               // object
 )
@@ -75,20 +67,19 @@ function onError(error) {
 function removeCookie(tabs) {
   let removing = browser.cookies.remove({
     url: tabs[0].url,
-    name: "favorite-color"
+    name: "favorite-color",
   });
   removing.then(onRemoved, onError);
 }
 
-let getActive = browser.tabs.query({active: true, currentWindow: true});
+let getActive = browser.tabs.query({ active: true, currentWindow: true });
 getActive.then(removeCookie);
 ```
 
 {{WebExtExamples}}
 
-> **Note:** This API is based on Chromium's [`chrome.cookies`](https://developer.chrome.com/docs/extensions/reference/cookies/#method-remove) API. This documentation is derived from [`cookies.json`](https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/api/cookies.json) in the Chromium code.
->
-> Microsoft Edge compatibility data is supplied by Microsoft Corporation and is included here under the Creative Commons Attribution 3.0 United States License.
+> [!NOTE]
+> This API is based on Chromium's [`chrome.cookies`](https://developer.chrome.com/docs/extensions/reference/api/cookies#method-remove) API. This documentation is derived from [`cookies.json`](https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/api/cookies.json) in the Chromium code.
 
 <!--
 // Copyright 2015 The Chromium Authors. All rights reserved.

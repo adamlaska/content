@@ -1,23 +1,19 @@
 ---
 title: Math.tan()
 slug: Web/JavaScript/Reference/Global_Objects/Math/tan
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.tan
 ---
 
 {{JSRef}}
 
-The **`Math.tan()`** function returns the tangent of a number in radians.
+The **`Math.tan()`** static method returns the tangent of a number in radians.
 
 {{EmbedInteractiveExample("pages/js/math-tan.html")}}
 
 ## Syntax
 
-```js
+```js-nolint
 Math.tan(x)
 ```
 
@@ -30,7 +26,8 @@ Math.tan(x)
 
 The tangent of `x`. If `x` is {{jsxref("Infinity")}}, `-Infinity`, or {{jsxref("NaN")}}, returns {{jsxref("NaN")}}.
 
-> **Note:** Due to floating point precision, it's not possible to obtain the exact value π/2, so the result is always finite if not `NaN`.
+> [!NOTE]
+> Due to floating point precision, it's not possible to obtain the exact value π/2, so the result is always finite if not `NaN`.
 
 ## Description
 

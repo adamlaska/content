@@ -1,10 +1,9 @@
 ---
 title: Challenge solutions
 slug: Web/Guide/CSS/Getting_started/Challenge_solutions
-tags:
-  - Beginner
-  - NeedsUpdate
+page-type: guide
 ---
+
 This page provides solutions to the challenges posed in the [CSS Getting Started](/en-US/docs/Learn/CSS/First_steps) tutorial. These are not the only possible solutions. The sections below correspond to the titles of the tutorial sections.
 
 ## Why use CSS
@@ -16,7 +15,7 @@ The challenges on page [Why use CSS](/en-US/docs/Learn/CSS/First_steps/How_CSS_w
 - Challenge
   - : Without looking up a reference, find five more color names that work in your stylesheet.
 - Solution
-  - : CSS supports common color names like `orange`, `yellow`, `blue`, `green`, or `black`. It also supports some more exotic color names like `chartreuse`, `fuschia`, or `burlywood`. See [CSS Color value](/en-US/docs/Web/CSS/color_value) for a complete list as well as other ways of specifying colors.
+  - : CSS supports common color names like `orange`, `yellow`, `blue`, `green`, or `black`. It also supports some more exotic color names like `chartreuse`, `fuchsia`, or `burlywood`. See [CSS Color value](/en-US/docs/Web/CSS/color_value) for a complete list as well as other ways of specifying colors.
 
 ## How CSS works
 
@@ -42,8 +41,13 @@ The challenges on page [Cascading and inheritance](/en-US/docs/Learn/CSS/Buildin
   - : Move the declaration for underlining from the rule for {{ HTMLElement("p") }} to the one for {{ HTMLElement("strong") }}. The resulting file looks like this:
 
     ```css
-    p {color: blue; }
-    strong {color: orange; text-decoration: underline;}
+    p {
+      color: blue;
+    }
+    strong {
+      color: orange;
+      text-decoration: underline;
+    }
     ```
 
 Later sections of this tutorial describe style rules and declarations in greater detail.
@@ -61,7 +65,9 @@ The challenges on page [Selectors](/en-US/docs/Learn/CSS/Building_blocks/Selecto
   - : Add a rule with an ID selector of `#second` and a declaration `color: blue;`, as shown below:
 
     ```css
-    #second { color: blue; }
+    #second {
+      color: blue;
+    }
     ```
 
     A more specific selector, `p#second` also works.
@@ -75,7 +81,9 @@ The challenges on page [Selectors](/en-US/docs/Learn/CSS/Building_blocks/Selecto
   - : Change the selector of the new rule to be a tag selector using `p`:
 
     ```css
-    p { color: blue; }
+    p {
+      color: blue;
+    }
     ```
 
 The rules for the other colors all have more specific selectors, so they override the blue of the paragraph.
@@ -109,7 +117,7 @@ The rules for the other colors all have more specific selectors, so they overrid
   - : Add the following style declaration to the `strong` rule:
 
     ```css
-      font: 200% serif;
+    font: 200% serif;
     ```
 
     If you use separate declarations for `font-size` and `font-family`, then the `font-style` setting on the first paragraph is _not_ overridden.
@@ -190,10 +198,12 @@ The challenges on page [Lists](/en-US/docs/Learn/CSS/Styling_text/Styling_lists)
 
     ```css
     /* numbered headings */
-    body {counter-reset: headnum;}
+    body {
+      counter-reset: head-num;
+    }
     h3::before {
-      content: "(" counter(headnum, upper-latin) ") ";
-      counter-increment: headnum;
+      content: "(" counter(head-num, upper-latin) ") ";
+      counter-increment: head-num;
     }
     ```
 
@@ -228,7 +238,7 @@ The challenges on page [Layout](/en-US/docs/Learn/CSS/CSS_layout) are:
   - : Change your sample document, `doc2.html`, adding this tag to it near the end, just before `</BODY>`: `<IMG id="fixed-pin" src="Yellow-pin.png" alt="Yellow map pin">` Predict where the image will appear in your document. Then refresh your browser to see if you were correct.
 - Solution
   - : The image appears to the right of the second list.
-    ![](pin_placement.png)
+    ![A list of five placeholder texts is titled Numbered Paragraphs. A yellow pin is placed to the right of a blue box containing the list.](pin_placement.png)
 - Challenge
   - : Add a rule to your stylesheet that places the image in the top right of your document.
 - Solution
@@ -263,7 +273,7 @@ The challenges on page [Tables](/en-US/docs/Learn/CSS/Building_blocks/Styling_ta
 
 ## Media
 
-The challenges on page [Media](/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) are:
+The challenges on page [Media](/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) are:
 
 ### Separate print style file
 
@@ -303,7 +313,7 @@ The challenges on page [Media](/en-US/docs/Web/CSS/Media_Queries/Using_media_que
 
     ```js
     // JavaScript demonstration
-    function doDemo (button) {
+    function doDemo(button) {
       const square = document.getElementById("square");
       square.style.backgroundColor = "#fa4";
       square.style.marginLeft = "20em";
@@ -311,7 +321,7 @@ The challenges on page [Media](/en-US/docs/Web/CSS/Media_Queries/Using_media_que
       setTimeout(clearDemo, 2000, button);
     }
 
-    function clearDemo (button) {
+    function clearDemo(button) {
       const square = document.getElementById("square");
       square.style.backgroundColor = "transparent";
       square.style.marginLeft = "0em";

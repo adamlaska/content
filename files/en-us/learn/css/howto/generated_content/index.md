@@ -1,23 +1,17 @@
 ---
 title: Using CSS generated content
 slug: Learn/CSS/Howto/Generated_content
-tags:
-  - Basic
-  - Beginner
-  - CSS
-  - CSS:Getting_Started
-  - Graphics
-  - Guide
-  - NeedsUpdate
-  - Web
+page-type: learn-faq
 ---
+
 {{LearnSidebar}}
 
 This article describes some ways in which you can use CSS to add content when a document is displayed. You modify your stylesheet to add text content or images.
 
 One of the important advantages of CSS is that it helps you to separate a document's style from its content. However, there are situations where it makes sense to specify certain content as part of the stylesheet, not as part of the document. You can specify text or image content within a stylesheet when that content is closely linked to the document's structure.
 
-> **Note:** Content specified in a stylesheet does not become part of the DOM.
+> [!NOTE]
+> Content specified in a stylesheet does not become part of the DOM.
 
 Specifying content in a stylesheet can cause complications. For example, you might have different language versions of your document that share a stylesheet. If you specify content in your stylesheet that requires translation, you have to put those parts of your stylesheet in different files and arrange for them to be linked with the appropriate language versions of your document.
 
@@ -27,7 +21,7 @@ This issue does not arise if the content you specify consists of symbols or imag
 
 ### Text content
 
-CSS can insert text content before or after an element. To specify this, make a rule and add {{ cssxref("::before") }} or {{ cssxref("::after") }} to the selector. In the declaration, specify the {{ cssxref("content") }} property with the text content as its value.
+CSS can insert text content before or after an element, or change the content of a list item marker (such as a bullet symbol or number) before a {{HTMLElement('li')}} or other element with {{ cssxref("display", "display: list-item;") }}. To specify this, make a rule and add {{ cssxref("::before") }}, {{ cssxref("::after") }}, or {{cssxref("::marker")}} to the selector. In the declaration, specify the {{ cssxref("content") }} property with the text content as its value.
 
 #### HTML
 
@@ -69,7 +63,7 @@ This rule adds a space and an icon after every link that has the class `glossary
 
 ```css
 a.glossary::after {
-   content: " " url("glossary-icon.gif");
+  content: " " url("glossary-icon.gif");
 }
 ```
 

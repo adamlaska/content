@@ -1,14 +1,11 @@
 ---
 title: PHP
 slug: Glossary/PHP
-tags:
-  - Beginner
-  - CodingScripting
-  - Glossary
-  - Infrastructure
-  - Intro
-  - PHP
+page-type: glossary-definition
 ---
+
+{{GlossarySidebar}}
+
 PHP (a recursive initialism for PHP: Hypertext Preprocessor) is an open-source server-side scripting language that can be embedded into HTML to build web applications and dynamic websites.
 
 ## Examples
@@ -54,8 +51,7 @@ PHP (a recursive initialism for PHP: Hypertext Preprocessor) is an open-source s
 - [Official website](https://www.php.net/)
 - [PHP](https://en.wikipedia.org/wiki/PHP) on Wikipedia
 - [PHP programming](https://en.wikibooks.org/wiki/PHP_Programming) on Wikibooks
-- [MDN Web Docs Glossary](/en-US/docs/Glossary)
-
+- Related glossary terms:
   - {{Glossary("Java")}}
   - {{Glossary("JavaScript")}}
   - {{Glossary("Python")}}

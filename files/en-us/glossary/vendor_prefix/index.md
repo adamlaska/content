@@ -1,10 +1,11 @@
 ---
 title: Vendor Prefix
 slug: Glossary/Vendor_Prefix
-tags:
-  - CodingScripting
-  - Glossary
+page-type: glossary-definition
 ---
+
+{{GlossarySidebar}}
+
 Browser vendors used to add prefixes to experimental or nonstandard CSS properties and JavaScript APIs, so developers could experiment with new ideas. This, in theory, helped to prevent their experiments from being relied upon and then breaking web developers' code during the standardization process.
 
 Web developers included prefixed features on production websites, despite their experimental nature. This made it more difficult for browser vendors to ensure compatibility while working on new features. Including prefixed features also harmed smaller browser vendors who ended up having to add other browsers' prefixes in order to render popular websites.
@@ -61,14 +62,15 @@ The prefixes for properties and methods are lower-case:
 Sample usage:
 
 ```js
-window.requestAnimationFrame = window.requestAnimationFrame ||
-                               window.mozRequestAnimationFrame ||
-                               window.webkitRequestAnimationFrame ||
-                               window.oRequestAnimationFrame ||
-                               window.msRequestAnimationFrame;
+window.requestAnimationFrame =
+  window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.oRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
 ```
 
-If you encounter the above code in a code base, you can safely remove all but the first line. All browsers support [`requestAnimationFrame`](/en-US/docs/Web/API/window/requestAnimationFrame#browser_compatibility) without vendor prefixes, and without `window`:
+If you encounter the above code in a code base, you can safely remove all but the first line. All browsers support [`requestAnimationFrame`](/en-US/docs/Web/API/Window/requestAnimationFrame#browser_compatibility) without vendor prefixes, and without `window`:
 
 ```js
 requestAnimationFrame(callback);
@@ -76,4 +78,6 @@ requestAnimationFrame(callback);
 
 ## See also
 
+- [`-moz-` vendor-prefixed CSS extensions](/en-US/docs/Web/CSS/Mozilla_Extensions)
+- [`-webkit-` vendor-prefixed CSS extensions](/en-US/docs/Web/CSS/WebKit_Extensions)
 - [Browser prefixes](https://en.wikipedia.org/wiki/CSS_hack#Browser_prefixes) on Wikipedia

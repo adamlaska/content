@@ -1,17 +1,17 @@
 ---
 title: clip
 slug: Web/SVG/Attribute/clip
-tags:
-  - SVG
-  - SVG Attribute
-  - Deprecated
-browser-compat: svg.attributes.presentation.clip
+page-type: svg-attribute
+status:
+  - deprecated
+browser-compat: svg.global_attributes.clip
 ---
+
 {{SVGRef}}{{deprecated_header}}
 
 The **`clip`** attribute is a presentation attribute defining the visible region of an element.
 
-This attribute has the same parameter values as defined for the {{ cssxref("clip","CSS clip property") }}. Unitless values, which indicate current user coordinates, are permitted on the coordinate values on the `rect()`. The value of `auto` defines a clipping path along the bounds of the viewport created by the given element.
+This attribute has the same parameter values as defined for the CSS {{cssxref("clip")}} property. Unitless values, which indicate current user coordinates, are permitted on the coordinate values on the `rect()`. The value of `auto` defines a clipping path along the bounds of the viewport created by the given element.
 
 You can use this attribute with the following SVG elements:
 
@@ -25,20 +25,22 @@ You can use this attribute with the following SVG elements:
 ## Example
 
 ```css hidden
-html,body,svg { height:100% }
+html,
+body,
+svg {
+  height: 100%;
+}
 ```
 
 ```html
 <svg viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg">
   <!-- Auto clipping -->
-  <svg x="0" width="10" height="10"
-       clip="auto">
+  <svg x="0" width="10" height="10" clip="auto">
     <circle cx="5" cy="5" r="4" stroke="green" />
   </svg>
 
   <!-- Rect(top, right, bottom, left) clipping -->
-  <svg x="10" width="10" height="10"
-       clip="rect(1, 9, 8, 2)">
+  <svg x="10" width="10" height="10" clip="rect(1, 9, 8, 2)">
     <circle cx="5" cy="5" r="4" stroke="green" />
   </svg>
 </svg>
@@ -48,7 +50,8 @@ html,body,svg { height:100% }
 
 ## Usage notes
 
-> **Warning:** This property is deprecated. Use {{cssxref("clip-path")}} instead.
+> [!WARNING]
+> This property is deprecated. Use {{cssxref("clip-path")}} instead.
 
 <table class="properties">
   <tbody>
@@ -75,4 +78,4 @@ The value `auto` defines a clipping path along the bounds of the viewport create
 
 ## Browser compatibility
 
-{{Compat}}s
+{{Compat}}

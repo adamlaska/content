@@ -1,18 +1,16 @@
 ---
-title: 'Blocked: All storage access requests'
-slug: Web/Privacy/Storage_access_policy/Errors/CookieBlockedAll
-tags:
-  - Cookies
-  - Errors
-  - Storage
-  - storage access policy
-  - tracking
+title: "Blocked: All storage access requests"
+slug: Web/Privacy/Storage_Access_Policy/Errors/CookieBlockedAll
+page-type: guide
 ---
+
+{{QuicklinksWithSubPages("Web/Privacy/Storage_Access_Policy/Errors")}}
+
 ## Message
 
 Firefox:
 
-```
+```plain
 CookieBlockedAll=Request to access cookies or storage on "X" was blocked because we are blocking all storage access requests.
 ```
 
@@ -29,5 +27,5 @@ If the resource that is being blocked doesn't need authentication, you can fix t
 
 ## See also
 
-- [Content blocking](https://support.mozilla.org/en-US/kb/content-blocking) on [support.mozilla.org](https://support.mozilla.org)
+- [Content blocking](https://support.mozilla.org/en-US/kb/content-blocking) on [support.mozilla.org](https://support.mozilla.org/)
 - [The `crossorigin` attribute](/en-US/docs/Web/HTML/Attributes/crossorigin)

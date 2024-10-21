@@ -1,14 +1,10 @@
 ---
 title: Retry-After
 slug: Web/HTTP/Headers/Retry-After
-tags:
-  - HTTP
-  - Reference
-  - Response
-  - Response Header
-  - header
+page-type: http-header
 browser-compat: http.headers.Retry-After
 ---
+
 {{HTTPSidebar}}
 
 The **`Retry-After`** response HTTP header indicates how long

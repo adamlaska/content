@@ -1,16 +1,10 @@
 ---
 title: Authorization
 slug: Web/HTTP/Headers/Authorization
-tags:
-  - HTTP
-  - HTTP Header
-  - Reference
-  - Request header
-  - Header
-  - Authorization
-  - Authentication
+page-type: http-header
 browser-compat: http.headers.Authorization
 ---
+
 {{HTTPSidebar}}
 
 The HTTP **`Authorization`** request header can be used to provide credentials that authenticate a user agent with a server, allowing access to a protected resource.
@@ -20,7 +14,10 @@ The server responds with a {{HTTPStatus("401")}} `Unauthorized` message that inc
 This header indicates what authentication schemes can be used to access the resource (and any additional information needed by the client to use them).
 The user-agent should select the most secure authentication scheme that it supports from those offered, prompt the user for their credentials, and then re-request the resource (including the encoded credentials in the **`Authorization`** header).
 
-> **Note:** This header is part of the [General HTTP authentication framework](/en-US/docs/Web/HTTP/Authentication#the_general_http_authentication_framework).
+This header is stripped from cross-origin redirects.
+
+> [!NOTE]
+> This header is part of the [General HTTP authentication framework](/en-US/docs/Web/HTTP/Authentication#the_general_http_authentication_framework).
 > It can be used with a number of [authentication schemes](/en-US/docs/Web/HTTP/Authentication#authentication_schemes).
 
 <table class="properties">
@@ -66,10 +63,12 @@ Authorization: Digest username=<username>,
 ## Directives
 
 - `<auth-scheme>`
+
   - : The [Authentication scheme](/en-US/docs/Web/HTTP/Authentication#authentication_schemes) that defines how the credentials are encoded.
     Some of the more common types are (case-insensitive): [`Basic`](/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme), `Digest`, `Negotiate` and `AWS4-HMAC-SHA256`.
 
-    > **Note:** For more information/options see [HTTP Authentication > Authentication schemes](/en-US/docs/Web/HTTP/Authentication#authentication_schemes)
+    > [!NOTE]
+    > For more information/options see [HTTP Authentication > Authentication schemes](/en-US/docs/Web/HTTP/Authentication#authentication_schemes)
 
 Other than `<auth-scheme>` the remaining directives are specific to each [authentication scheme](/en-US/docs/Web/HTTP/Authentication#authentication_schemes).
 Generally you will need to check the relevant specifications for these (keys for a small subset of schemes are listed below).
@@ -80,7 +79,8 @@ Generally you will need to check the relevant specifications for these (keys for
 
   - : The credentials, encoded according to the specified scheme.
 
-    > **Note:** For information about the encoding algorithm, see the examples: below, in {{HTTPHeader("WWW-Authenticate")}}, in [HTTP Authentication](/en-US/docs/Web/HTTP/Authentication), and in the relevant specifications.
+    > [!NOTE]
+    > For information about the encoding algorithm, see the examples: below, in {{HTTPHeader("WWW-Authenticate")}}, in [HTTP Authentication](/en-US/docs/Web/HTTP/Authentication), and in the relevant specifications.
 
 ### Digest
 
@@ -108,7 +108,7 @@ Generally you will need to check the relevant specifications for these (keys for
     - `"auth"`: Authentication
     - `"auth-int"`: Authentication with integrity protection
 - `cnonce`
-  - : An quoted ASCII-only string value provided by the client.
+  - : An quoted {{Glossary("ASCII")}}-only string value provided by the client.
     This is used by both the client and server to provide mutual authentication, provide some message integrity protection, and avoid "chosen plaintext
     attacks".
     See the specification for additional information.

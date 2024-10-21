@@ -1,14 +1,10 @@
 ---
 title: If-None-Match
 slug: Web/HTTP/Headers/If-None-Match
-tags:
-  - Conditional Requests
-  - HTTP
-  - HTTP Header
-  - Reference
-  - Request header
+page-type: http-header
 browser-compat: http.headers.If-None-Match
 ---
+
 {{HTTPSidebar}}
 
 The **`If-None-Match`** HTTP request header makes the request conditional. For {{HTTPMethod("GET")}} and {{HTTPMethod("HEAD")}} methods, the server will return the requested resource, with a {{HTTPStatus("200")}} status, only if it doesn't have an {{HTTPHeader("ETag")}} matching the given ones. For other methods, the request will be processed only if the eventually existing resource's {{HTTPHeader("ETag")}} doesn't match any of the values listed.
@@ -48,7 +44,7 @@ If-None-Match: *
 ## Directives
 
 - \<etag_value>
-  - : Entity tags uniquely representing the requested resources. They are a string of ASCII characters placed between double quotes (Like `"675af34563dc-tr34"`) and may be prefixed by `W/` to indicate that the weak comparison algorithm should be used (this is useless with `If-None-Match` as it only uses that algorithm).
+  - : Entity tags uniquely representing the requested resources. They are a string of {{Glossary("ASCII")}} characters placed between double quotes (Like `"675af34563dc-tr34"`) and may be prefixed by `W/` to indicate that the weak comparison algorithm should be used (this is useless with `If-None-Match` as it only uses that algorithm).
 - `*`
   - : The asterisk is a special value representing any resource. They are only useful when uploading a resource, usually with {{HTTPMethod("PUT")}}, to check if another resource with the identity has already been uploaded before.
 

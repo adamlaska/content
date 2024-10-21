@@ -1,12 +1,10 @@
 ---
 title: <clipPath>
 slug: Web/SVG/Element/clipPath
-tags:
-  - Element
-  - Reference
-  - SVG
+page-type: svg-element
 browser-compat: svg.elements.clipPath
 ---
+
 {{SVGRef}}
 
 The **`<clipPath>`** [SVG](/en-US/docs/Web/SVG) element defines a clipping path, to be used by the {{SVGAttr("clip-path")}} property.
@@ -16,7 +14,11 @@ A clipping path restricts the region to which paint can be applied. Conceptually
 ## Example
 
 ```css hidden
-html,body,svg { height:100% }
+html,
+body,
+svg {
+  height: 100%;
+}
 ```
 
 ```html
@@ -30,7 +32,9 @@ html,body,svg { height:100% }
   </clipPath>
 
   <!-- The original black heart, for reference -->
-  <path id="heart" d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 Z" />
+  <path
+    id="heart"
+    d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 Z" />
 
   <!--
     Only the portion of the red heart
@@ -44,7 +48,14 @@ html,body,svg { height:100% }
 /* With a touch of CSS for browsers who *
  * implemented the r Geometry Property. */
 
-@keyframes openYourHeart {from {r: 0} to {r: 60px}}
+@keyframes openYourHeart {
+  from {
+    r: 0;
+  }
+  to {
+    r: 60px;
+  }
+}
 
 #myClip circle {
   animation: openYourHeart 15s infinite;
@@ -63,18 +74,7 @@ By default, {{cssxref("pointer-events")}} are not dispatched on clipped regions.
   - : Defines the coordinate system for the contents of the `<clipPath>` element.
     _Value type_: `userSpaceOnUse`|`objectBoundingBox` ; _Default value_: `userSpaceOnUse`; _Animatable_: **yes**
 
-### Global attributes
-
-- [Core Attributes](/en-US/docs/Web/SVG/Attribute/Core)
-  - : Most notably: {{SVGAttr('id')}}
-- [Styling Attributes](/en-US/docs/Web/SVG/Attribute/Styling)
-  - : {{SVGAttr('class')}}, {{SVGAttr('style')}}
-- [Conditional Processing Attributes](/en-US/docs/Web/SVG/Attribute/Conditional_Processing)
-  - : Most notably: {{SVGAttr('requiredExtensions')}}, {{SVGAttr('systemLanguage')}}
-- [Presentation Attributes](/en-US/docs/Web/SVG/Attribute/Presentation)
-  - : Most notably: {{SVGAttr('clip-path')}}, {{SVGAttr('clip-rule')}}, {{SVGAttr('color')}}, {{SVGAttr('display')}}, {{SVGAttr('fill')}}, {{SVGAttr('fill-opacity')}}, {{SVGAttr('fill-rule')}}, {{SVGAttr('filter')}}, {{SVGAttr('mask')}}, {{SVGAttr('opacity')}}, {{SVGAttr('shape-rendering')}}, {{SVGAttr('stroke')}}, {{SVGAttr('stroke-dasharray')}}, {{SVGAttr('stroke-dashoffset')}}, {{SVGAttr('stroke-linecap')}}, {{SVGAttr('stroke-linejoin')}}, {{SVGAttr('stroke-miterlimit')}}, {{SVGAttr('stroke-opacity')}}, {{SVGAttr('stroke-width')}}, {{SVGAttr("transform")}}, {{SVGAttr('vector-effect')}}, {{SVGAttr('visibility')}}
-
-## Usage notes
+## Usage context
 
 {{svginfo}}
 
