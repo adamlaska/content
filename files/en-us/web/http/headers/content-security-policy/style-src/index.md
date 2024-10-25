@@ -1,19 +1,10 @@
 ---
-title: 'CSP: style-src'
+title: "CSP: style-src"
 slug: Web/HTTP/Headers/Content-Security-Policy/style-src
-tags:
-  - CSP
-  - Content
-  - Content-Security-Policy
-  - Directive
-  - HTTP
-  - Reference
-  - Security
-  - Style
-  - source
-  - style-src
+page-type: http-csp-directive
 browser-compat: http.headers.Content-Security-Policy.style-src
 ---
+
 {{HTTPSidebar}}
 
 The HTTP {{HTTPHeader("Content-Security-Policy")}} (CSP) **`style-src`** directive specifies valid sources for stylesheets.
@@ -40,18 +31,20 @@ The HTTP {{HTTPHeader("Content-Security-Policy")}} (CSP) **`style-src`** directi
 
 ## Syntax
 
-One or more sources can be allowed for the `style-src` policy:
-
 ```http
-Content-Security-Policy: style-src <source>;
-Content-Security-Policy: style-src <source> <source>;
+Content-Security-Policy: style-src 'none';
+Content-Security-Policy: style-src <source-expression-list>;
 ```
 
-### Sources
+This directive may have one of the following values:
 
-`<source>` can be any one of the values listed in [CSP Source Values](/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#sources).
+- `'none'`
+  - : No resources of this type may be loaded. The single quotes are mandatory.
+- `<source-expression-list>`
 
-Note that this same set of values can be used in all {{Glossary("fetch directive", "fetch directives")}} (and a [number of other directives](/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#relevant_directives)).
+  - : A space-separated list of _source expression_ values. Resources of this type may be loaded if they match any of the given source expressions.
+
+    Source expressions are specified as keyword values or URL patterns: the syntax for each source expression is given in [CSP Source Values](/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/Sources).
 
 ## Examples
 
@@ -69,7 +62,9 @@ the following stylesheets are blocked and won't load:
 <link href="https://not-example.com/styles/main.css" rel="stylesheet" />
 
 <style>
-#inline-style { background: red; }
+  #inline-style {
+    background: red;
+  }
 </style>
 
 <style>
@@ -92,39 +87,45 @@ Inline style attributes are also blocked:
 As well as styles that are applied in JavaScript by setting the `style` attribute directly, or by setting {{domxref("CSSStyleDeclaration.cssText", "cssText")}}:
 
 ```js
-document.querySelector('div').setAttribute('style', 'display:none;');
-document.querySelector('div').style.cssText = 'display:none;';
+document.querySelector("div").setAttribute("style", "display:none;");
+document.querySelector("div").style.cssText = "display:none;";
 ```
 
 However, styles properties that are set directly on the element's {{domxref("HTMLElement/style", "style")}} property will not be blocked, allowing users to safely manipulate styles via JavaScript:
 
 ```js
-document.querySelector('div').style.display = 'none';
+document.querySelector("div").style.display = "none";
 ```
 
 These types of manipulations can be prevented by disallowing JavaScript via the {{CSP("script-src")}} CSP directive.
 
 ### Unsafe inline styles
 
-> **Note:** Disallowing inline styles and inline scripts is one of the biggest security wins CSP provides. However, if you absolutely have to use it, there are a few mechanisms that will allow them.
+> [!NOTE]
+> Disallowing inline styles and inline scripts is one of the biggest security wins CSP provides. However, if you absolutely have to use it, there are a few mechanisms that will allow them.
 
 To allow inline styles, `'unsafe-inline'`, a nonce-source or a hash-source that matches the inline block can be specified.
+The following Content Security Policy will allow inline styles like the {{HTMLElement("style")}} element, and the `style` attribute on any element:
 
-```bash
+```http
 Content-Security-Policy: style-src 'unsafe-inline';
 ```
 
-The above Content Security Policy will allow inline styles like the {{HTMLElement("style")}} element, and the `style` attribute on any element:
+The following {{HTMLElement("style")}} element and `style` attribute will be allowed by the policy:
 
 ```html
 <style>
-  #inline-style { background: red; }
+  #inline-style {
+    background: red;
+  }
 </style>
 
 <div style="display:none">Foo</div>
 ```
 
-You can use a nonce-source to only allow specific inline style blocks:
+You can use a nonce-source to only allow specific inline style blocks.
+You need to generate a random nonce value (using a cryptographically secure random token generator) and include it in the policy.
+It is important to note, this nonce value needs to be dynamically generated as it has to be unique for each HTTP request:
 
 ```http
 Content-Security-Policy: style-src 'nonce-2726c7f26c'
@@ -134,7 +135,9 @@ You will have to set the same nonce on the {{HTMLElement("style")}} element:
 
 ```html
 <style nonce="2726c7f26c">
-  #inline-style { background: red; }
+  #inline-style {
+    background: red;
+  }
 </style>
 ```
 
@@ -153,7 +156,11 @@ Content-Security-Policy: style-src 'sha256-ozBpjL6dxO8fsS4u6fwG1dFDACYvpNxYeBA6t
 When generating the hash, don't include the {{HTMLElement("style")}} tags and note that capitalization and whitespace matter, including leading or trailing whitespace.
 
 ```html
-<style>#inline-style { background: red; }</style>
+<style>
+  #inline-style {
+    background: red;
+  }
+</style>
 ```
 
 ### Unsafe style expressions

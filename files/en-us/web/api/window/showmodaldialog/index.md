@@ -1,19 +1,18 @@
 ---
-title: Window.showModalDialog()
+title: "Window: showModalDialog() method"
+short-title: showModalDialog()
 slug: Web/API/Window/showModalDialog
 page-type: web-api-instance-method
-tags:
-  - API
-  - Deprecated
-  - HTML DOM
-  - Method
-  - Window
-  - Non-standard
+status:
+  - deprecated
+  - non-standard
 browser-compat: api.Window.showModalDialog
 ---
+
 {{APIRef}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-> **Warning:** This feature has been removed. Please fix your Web sites and applications.
+> [!WARNING]
+> This feature has been removed. Please fix your websites and applications.
 >
 > This method was removed in Chrome 43 and Firefox 56.
 
@@ -22,7 +21,7 @@ created and displayed a modal dialog box containing a specified HTML document.
 
 ## Syntax
 
-```js
+```js-nolint
 showModalDialog(uri)
 showModalDialog(uri, arguments)
 showModalDialog(uri, arguments, options)
@@ -95,15 +94,16 @@ showModalDialog(uri, arguments, options)
   </tbody>
 </table>
 
-> **Note:** Firefox does not implement the `dialogHide`, `edge`, `status`, or `unadorned` arguments.
+> [!NOTE]
+> Firefox does not implement the `dialogHide`, `edge`, `status`, or `unadorned` arguments.
 
 ### Return value
 
- Holds the `returnValue` property as set by the document specified by `uri`.
+Holds the `returnValue` property as set by the document specified by `uri`.
 
 ## Specifications
 
-- [MSDN page for `showModalDialog`](<https://msdn.microsoft.com/library/ms536759(VS.85).aspx>)
+- [MSDN page for `showModalDialog`](<https://learn.microsoft.com/en-us/previous-versions/ms536759(v=vs.85)>)
 
 ## Browser compatibility
 

@@ -1,30 +1,19 @@
 ---
-title: HTMLImageElement.alt
+title: "HTMLImageElement: alt property"
+short-title: alt
 slug: Web/API/HTMLImageElement/alt
 page-type: web-api-instance-property
-tags:
-  - API
-  - Element
-  - HTML
-  - HTML DOM
-  - HTMLImageElement
-  - Image
-  - Property
-  - Reference
-  - Text
-  - alt
-  - alternate
-  - fallback
 browser-compat: api.HTMLImageElement.alt
 ---
+
 {{APIRef("HTML DOM")}}
 
 The {{domxref("HTMLImageElement")}} property **`alt`** provides fallback (alternate) text to display when the image specified by the {{HTMLElement("img")}} element is not loaded.
 
 This may be the case because of an error, because the user has disabled the loading of images, or because the image hasn't finished loading yet.
 
-Perhaps the most important reason to use the `alt` property is to support [accessibility](/en-US/docs/Web/Accessibility), as the `alt` text may be used by screen readers and other assistive technologies to help differently-abled users make full use of your content.
-It will be read aloud or sent to the touch device, for example, to support visually impaired users.
+Perhaps the most important reason to use the `alt` property is to support [accessibility](/en-US/docs/Web/Accessibility), as the `alt` text may be used by screen readers and other assistive technologies to help people with a disability make full use of your content.
+It will be read aloud or sent to a braille output device, for example, to support blind or visually impaired users.
 
 > **Think of it like this:** When choosing `alt` strings for your images, imagine what you would say when reading the page to someone over the phone without mentioning that there's an image on the page.
 
@@ -60,18 +49,17 @@ In the HTML for this example, shown below, the {{HTMLElement("img")}} element in
 ```html
 <div class="container">
   <div class="left-margin">
-    <img src="/files/16861/margin-flourish.svg" alt="">
+    <img src="margin-flourish.svg" alt="" />
   </div>
   <div class="contents">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-    elit. Quisque quis orci ligula. Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit. In ac neque libero.
-    Vivamus consectetur rhoncus elit eget porta. Etiam
-    pulvinar ex id sapien laoreet, quis aliquet odio
-    lobortis. Nam ac mauris at risus laoreet cursus vitae et
-    sapien. Etiam molestie auctor eros, ac porta risus
-    scelerisque sit amet. Ut nunc neque, porta eu auctor at,
-    tempor et arcu.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis orci
+      ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac
+      neque libero. Vivamus consectetur rhoncus elit eget porta. Etiam pulvinar
+      ex id sapien laoreet, quis aliquet odio lobortis. Nam ac mauris at risus
+      laoreet cursus vitae et sapien. Etiam molestie auctor eros, ac porta risus
+      scelerisque sit amet. Ut nunc neque, porta eu auctor at, tempor et arcu.
+    </p>
   </div>
 </div>
 ```
@@ -96,11 +84,14 @@ p {
 .container {
   width: 100vh;
   height: 95vh;
-  font: 16px Arial,Helvetica,sans-serif;
+  font:
+    16px Arial,
+    Helvetica,
+    sans-serif;
 }
 
 .left-margin {
-  background-color: rgb(241, 240, 237);
+  background-color: rgb(241 240 237);
   width: 9em;
   height: 100%;
   float: left;
@@ -116,7 +107,7 @@ p {
 }
 
 .contents {
-  background-color: rgb(241, 240, 235);
+  background-color: rgb(241 240 235);
   height: 100%;
   margin-left: 2em;
   padding-top: 1em;
@@ -138,10 +129,18 @@ For example, in the snippet of HTML below, a toolbar which uses icon images as l
 
 ```html
 <li class="toolbar" aria-role="toolbar">
-  <a href="songs.html" aria-role="button"><img src="songicon.svg" alt="Songs"</a>
-  <a href="albums.html" aria-role="button"><img src="albumicon.svg" alt="Albums"</a>
-  <a href="artists.html" aria-role="button"><img src="artisticon.svg" alt="Artists"</a>
-  <a href="playlists.html" aria-role="button"><img src="playlisticon.svg" alt="Playlists"</a>
+  <a href="songs.html" aria-role="button">
+    <img src="songicon.svg" alt="Songs" />
+  </a>
+  <a href="albums.html" aria-role="button">
+    <img src="albumicon.svg" alt="Albums"
+  /></a>
+  <a href="artists.html" aria-role="button">
+    <img src="artisticon.svg" alt="Artists" />
+  </a>
+  <a href="playlists.html" aria-role="button">
+    <img src="playlisticon.svg" alt="Playlists" />
+  </a>
 </li>
 ```
 
@@ -163,7 +162,7 @@ Logos (such as corporate or brand logos) and informational icons should use the 
 That is, if an image is a corporate logo, the `alt` text should be the name of the company.
 If the image is an icon representing a status or other information, the text should be the name of that state.
 
-For example, if an image is a badge that's shown on a page to indicate that the content of the page is new and has been updated recently, the corresponding `alt` text might be "`Updated Recently"` or even "`Updated on 27 August 2019"`.
+For example, if an image is a badge that's shown on a page to indicate that the content of the page is new and has been updated recently, the corresponding `alt` text might be `"Updated Recently"` or even `"Updated on 27 August 2019"`.
 
 In this example, a starburst image with the word "New!" is used to indicate that an article is about something new (and probably supposedly also exciting).
 The `alt` attribute is set to `New Page!` to allow that text to be displayed in place of the image if the image isn't available.
@@ -176,18 +175,17 @@ Note the use of the `alt` attribute on the {{HTMLElement("img")}}, providing a g
 
 ```html
 <div class="container">
-  <img src="https://www.bitstampede.com/mdn-test/new-page.svg"
-       alt="New Page!" class="pageinfo-badge">
+  <img
+    src="https://www.bitstampede.com/mdn-test/new-page.svg"
+    alt="New Page!"
+    class="pageinfo-badge" />
   <p class="contents">
-    Lorem ipsum dolor sit amet, consectetur adipiscing
-    elit. Quisque quis orci ligula. Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit. In ac neque libero.
-    Vivamus consectetur rhoncus elit eget porta. Etiam
-    pulvinar ex id sapien laoreet, quis aliquet odio
-    lobortis. Nam ac mauris at risus laoreet cursus vitae et
-    sapien. Etiam molestie auctor eros, ac porta risus
-    scelerisque sit amet. Ut nunc neque, porta eu auctor at,
-    tempor et arcu.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis orci
+    ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac neque
+    libero. Vivamus consectetur rhoncus elit eget porta. Etiam pulvinar ex id
+    sapien laoreet, quis aliquet odio lobortis. Nam ac mauris at risus laoreet
+    cursus vitae et sapien. Etiam molestie auctor eros, ac porta risus
+    scelerisque sit amet. Ut nunc neque, porta eu auctor at, tempor et arcu.
   </p>
 </div>
 ```
@@ -205,15 +203,35 @@ The main feature of the CSS here is the use of {{cssxref("clip-path")}} and {{cs
   width: 9em;
   padding-right: 1em;
   float: left;
-  clip-path: polygon(100% 0, 100% 50%, 90% 70%, 80% 80%,
-             70% 90%, 50% 100%, 0 100%, 0 0);
-  shape-outside: polygon(100% 0, 100% 50%, 90% 70%, 80% 80%,
-             70% 90%, 50% 100%, 0 100%, 0 0);
+  clip-path: polygon(
+    100% 0,
+    100% 50%,
+    90% 70%,
+    80% 80%,
+    70% 90%,
+    50% 100%,
+    0 100%,
+    0 0
+  );
+  shape-outside: polygon(
+    100% 0,
+    100% 50%,
+    90% 70%,
+    80% 80%,
+    70% 90%,
+    50% 100%,
+    0 100%,
+    0 0
+  );
 }
 
 .contents {
   margin-top: 1em;
-  font: 16px Arial,Helvetica,Verdana,sans-serif;
+  font:
+    16px Arial,
+    Helvetica,
+    Verdana,
+    sans-serif;
 }
 ```
 
@@ -224,7 +242,7 @@ The main feature of the CSS here is the use of {{cssxref("clip-path")}} and {{cs
 ### Other images
 
 Images showing objects or scenes should have `alt` text describing what's seen in the image.
-A photo of a yellow teapot might literally have its `alt` attribute set to "`A yellow teapot"`.
+A photo of a yellow teapot might literally have its `alt` attribute set to `"A yellow teapot"`.
 
 ## Specifications
 

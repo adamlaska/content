@@ -1,15 +1,10 @@
 ---
 title: privacy
 slug: Mozilla/Add-ons/WebExtensions/API/privacy
-tags:
-  - API
-  - Add-ons
-  - Extensions
-  - Privacy
-  - Reference
-  - WebExtensions
+page-type: webextension-api
 browser-compat: webextensions.api.privacy
 ---
+
 {{AddonSidebar}}
 
 Access and modify various privacy-related browser settings.
@@ -31,7 +26,8 @@ To use the privacy API, you must have the "privacy" [API permission](/en-US/docs
 
 {{WebExtExamples("h2")}}
 
-> **Note:** This API is based on Chromium's [`chrome.privacy`](https://developer.chrome.com/docs/extensions/reference/privacy/) API.
+> [!NOTE]
+> This API is based on Chromium's [`chrome.privacy`](https://developer.chrome.com/docs/extensions/reference/api/privacy) API.
 
 <!--
 // Copyright 2015 The Chromium Authors. All rights reserved.

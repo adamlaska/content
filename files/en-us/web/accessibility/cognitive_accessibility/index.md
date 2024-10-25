@@ -1,18 +1,16 @@
 ---
 title: Cognitive accessibility
 slug: Web/Accessibility/Cognitive_accessibility
-tags:
-  - Accessibility
-  - Best practices
-  - Forms
-  - WCAG
-  - cognitive accessibility
+page-type: guide
 ---
+
+{{AccessibilitySidebar}}
+
 Cognitive accessibility covers accessibility considerations for people with cognition and learning disabilities. This document introduces cognitive accessibility and improving accessibility of the web for people with cognitive and learning differences.
 
 Cognitive impairment refers to a broad range of disabilities, from people with intellectual disabilities who may have the most-limited capabilities, to age-related issues with thinking and remembering. The range includes people with mental illnesses, such as depression and schizophrenia. It also includes people with learning disabilities, such as dyslexia and attention deficit hyperactivity disorder (ADHD).
 
-Though there is a lot of diversity within clinical definitions of cognitive impairments, people with them experience a common set of functional problems. These problems include difficulty with understanding content, remembering how to complete tasks, and confusion caused by inconsistent or non-traditional web page layouts. In this document, we focus on steps developers should take to improve the cognitive accessibility of their web sites and applications.
+Though there is a lot of diversity within clinical definitions of cognitive impairments, people with them experience a common set of functional problems. These problems include difficulty with understanding content, remembering how to complete tasks, and confusion caused by inconsistent or non-traditional web page layouts. In this document, we focus on steps developers should take to improve the cognitive accessibility of their websites and applications.
 
 ## Overview
 
@@ -86,7 +84,7 @@ If moving, blinking, scrolling, or auto-updating information starts automaticall
 Additional timing criteria to consider are:
 
 - People who have cognitive or language limitations may need more time to read and to understand. For improved usability remove any time limit. Timed content should also be avoided, with exceptions for non-interactive synchronized media and real-time events.
-- People with attention deficit disorders should be able to focus on content without distractions. The user should be able to postpone or suppress interruptions, except situations involving altering a person to an emergency. This provides access to people with cognitive disabilities by enabling them to focus on the main purpose of the content. Enable the user to postpone content updates by providing a way to request content updates rather than updating automatically. Also, enable a way to make nonessential alerts optional.
+- People with attention deficit disorders should be able to focus on content without distractions. The user should be able to postpone or suppress interruptions, except situations involving alerting a person to an emergency. This provides access to people with cognitive disabilities by enabling them to focus on the main purpose of the content. Enable the user to postpone content updates by providing a way to request content updates rather than updating automatically. Also, enable a way to make nonessential alerts optional.
 - Ensure that people can continue an activity without loss of data after re-authenticating an expired session, for example, saving the state of a questionnaire. Make sure to save data in such a way that it can be modified after a user re-authenticates. Before re-authenticating, encode the data as hidden or encrypted.
 - Providing warnings about inactivity that could result in data loss. When a timeout is used, tell people exactly how much time will cause the session to time out and result in lost data. The exception to this is preserving data for more than 20 hours when no actions are taken.
 
@@ -169,14 +167,14 @@ Provide an expanded form of the abbreviation the first time it is used, followed
 
 ### Reading level
 
-Content should be written as clearly and as possible. A good rule to go by is to make content simple enough that it can be understood the first time. Methods to achieve this include:
+Content should be written as clearly as possible. A good rule to go by is to make content simple enough that it can be understood the first time. Methods to achieve this include:
 
 - Using short, simple words.
 - Writing short sentences.
 - Using active voice in the present tense.
 - Using correct grammar and spelling.
 
-It helps users with cognitive disabilities to provide a text summary (sometimes referred to as a TL;DR; , or "too long, didn't read") at a low reading level. Another technique you can use is providing accompanying visuals to help explain ideas, events, and processes.
+It helps users with cognitive disabilities to provide a text summary (sometimes referred to as a TL;DR, or "too long; didn't read") at a low reading level. Another technique you can use is providing accompanying visuals to help explain ideas, events, and processes.
 
 There are tools that can rate the level of your content. For example, this document has an average grade level of about 11. This means it should be easily understood by a native English speaker aged 16 to 17. Some tools can even provide suggestions to help simplify it.
 
@@ -189,7 +187,7 @@ There are multiple techniques that can help teach people how to pronounce words:
 - Provide a glossary with pronunciation.
 - Use the {{HTMLElement('ruby')}} element to illustrate how a word is pronounced.
 
-Providing guidance on how to pronounce words helps many different kinds of people, including those who prefer to read aloud, non-native language speakers, and people who may unfamiliar with the meaning of a term in context.
+Providing guidance on how to pronounce words helps many different kinds of people, including those who prefer to read aloud, non-native language speakers, and people who are unfamiliar with the meaning of a term in context.
 
 Another solution is to use glyphs or diacritical marks to illustrate pronunciation. However, if this technique is used, there must be a mechanism to turn it off. Further, it is helpful to link to a guide to the marks being used, as their meaning may not be obvious.
 
@@ -268,7 +266,7 @@ The above are good design practices. They will benefit everyone.
 - Many people with cognitive impairments also have physical disabilities. Websites must conform with the W3C's [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).
 - The W3C's [Cognitive and Learning Disabilities Accessibility Task Force](https://www.w3.org/WAI/GL/task-forces/coga/) produces web accessibility guidelines for people with cognitive impairments.
 - WebAIM has a [Cognitive page](https://webaim.org/articles/cognitive/) of relevant information and resources.
-- The United States Centers for Disease Control estimate that, as of 2018, 1 in 4 U.S. citizens have a disability and, of them, [cognitive impairment is the most common for young people](https://www.cdc.gov/media/releases/2018/p0816-disability.html).
+- The United States Centers for Disease Control estimate that, as of 2018, 1 in 4 U.S. citizens have a disability and, of them, [cognitive impairment is the most common for young people](https://archive.cdc.gov/www_cdc_gov/media/releases/2018/p0816-disability.html).
 - In the U.S., "intellectual disabilities" used to be called "mental retardation". In the U.K., "intellectual disabilities" is commonly called "learning disabilities" or "learning difficulties".
 
 ## See also
@@ -278,7 +276,7 @@ The above are good design practices. They will benefit everyone.
 - [Accessibility for seizure disorders](/en-US/docs/Web/Accessibility/Seizure_disorders)
 - [Understanding WCAG Guidelines](/en-US/docs/Web/Accessibility/Understanding_WCAG)
 - [Accessibility overview](/en-US/docs/Learn/Accessibility)
-- [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), including [cognitive accessibility guidelines](#wcag_guidelines).
-- [CThe W3Cs cognitive and Learning Disabilities Accessibility Task Force](https://www.w3.org/WAI/GL/task-forces/coga/)
+- [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), including [cognitive accessibility guidelines](#wcag_guidelines)
+- [The W3C's Cognitive and Learning Disabilities Accessibility Task Force](https://www.w3.org/WAI/GL/task-forces/coga/)
 - [WebAIM Cognitive information](https://webaim.org/articles/cognitive/)
-- [CDC information on disabilities.](https://www.cdc.gov/media/releases/2018/p0816-disability.html)
+- [CDC information on disabilities](https://www.cdc.gov/ncbddd/disabilityandhealth/)

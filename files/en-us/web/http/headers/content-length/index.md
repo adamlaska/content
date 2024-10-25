@@ -1,16 +1,10 @@
 ---
 title: Content-Length
 slug: Web/HTTP/Headers/Content-Length
-tags:
-  - Content-Length
-  - HTTP
-  - HTTP header
-  - Request header
-  - Response header
-  - Reference
-  - Payload header
+page-type: http-header
 browser-compat: http.headers.Content-Length
 ---
+
 {{HTTPSidebar}}
 
 The **`Content-Length`** header indicates the size of the message body, in bytes, sent to the recipient.
@@ -22,7 +16,7 @@ The **`Content-Length`** header indicates the size of the message body, in bytes
       <td>
         {{Glossary("Request header")}},
         {{Glossary("Response header")}},
-        {{Glossary("Payload header")}}
+        {{Glossary("Content header")}}
       </td>
     </tr>
     <tr>
@@ -47,7 +41,7 @@ Content-Length: <length>
 ## Directives
 
 - \<length>
-  - : The length in decimal number of octets.
+  - : The length in octets.
 
 ## Specifications
 

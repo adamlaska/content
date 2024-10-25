@@ -1,15 +1,11 @@
 ---
-title: SVGStyleElement.disabled
+title: "SVGStyleElement: disabled property"
+short-title: disabled
 slug: Web/API/SVGStyleElement/disabled
 page-type: web-api-instance-property
-tags:
-  - API
-  - Property
-  - Reference
-  - SVG
-  - SVG DOM
 browser-compat: api.SVGStyleElement.disabled
 ---
+
 {{APIRef("SVG")}}
 
 The **`SVGStyleElement.disabled`** property can be used to get and set whether the stylesheet is disabled (`true`) or not (`false`).
@@ -36,7 +32,9 @@ The HTML contains an SVG definition for a [`<circle>`](/en-US/docs/Web/SVG/Eleme
 
 ```html
 <button>Enable</button>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
   <style id="circle_style_id">
     circle {
       fill: gold;
@@ -55,19 +53,19 @@ The style already exists because it is defined in the SVG, so this should succee
 
 ```js
 const svg = document.querySelector("svg");
-const style = svg.getElementById("circle_style_id")
+const style = svg.getElementById("circle_style_id");
 style.disabled = true;
 ```
 
 We then add an event handler for the button that toggles the disabled state and button text.
 
 ```js
-const button = document.querySelector('button');
+const button = document.querySelector("button");
 
-button.addEventListener('click', () => {
-   style.disabled = !style.disabled;
-   button.textContent = style.disabled ? 'Enable' : 'Disable';
-   });
+button.addEventListener("click", () => {
+  style.disabled = !style.disabled;
+  button.textContent = style.disabled ? "Enable" : "Disable";
+});
 ```
 
 #### Result
@@ -90,8 +88,10 @@ The HTML is similar to the previous case, but the SVG definition does not includ
 
 ```html
 <button>Enable</button>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <circle cx="50" cy="50" r="25" />
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <circle cx="50" cy="50" r="25" />
 </svg>
 ```
 
@@ -100,14 +100,15 @@ The HTML is similar to the previous case, but the SVG definition does not includ
 First we create the new SVG style node.
 This is done by first creating a style element in the SVG namespace using [`Document.createElementNS()`](/en-US/docs/Web/API/Document/createElementNS), creating and appending a text node with the style definition, and then appending the node to the SVG defined above.
 
-> **Note:** You must use [`Document.createElementNS()`](/en-US/docs/Web/API/Document/createElementNS) and not [`Document.createElement()`](/en-US/docs/Web/API/Document/createElement) to create the style, or by default you'll create the equivalent HTML style element.
+> [!NOTE]
+> You must use [`Document.createElementNS()`](/en-US/docs/Web/API/Document/createElementNS) and not [`Document.createElement()`](/en-US/docs/Web/API/Document/createElement) to create the style, or by default you'll create the equivalent HTML style element.
 
 ```js
 const svg = document.querySelector("svg");
 
 // Create the `style` element in the SVG namespace
-const style = document.createElementNS('http://www.w3.org/2000/svg', 'style');
-const node = document.createTextNode('circle { fill: red; }');
+const style = document.createElementNS("http://www.w3.org/2000/svg", "style");
+const node = document.createTextNode("circle { fill: red; }");
 svg.appendChild(style);
 style.appendChild(node);
 ```
@@ -118,18 +119,18 @@ Before this point the SVG did not have a style associated, and so the value defa
 
 ```js
 //Disable the style
-style.disabled=true;
+style.disabled = true;
 ```
 
 Last of all we add an event handler for the button that toggles the disabled state and button text (this is the same as in the previous example).
 
 ```js
-const button = document.querySelector('button');
+const button = document.querySelector("button");
 
-button.addEventListener('click', () => {
-   style.disabled = !style.disabled;
-   button.textContent = style.disabled ? 'Enable' : 'Disable';
-   });
+button.addEventListener("click", () => {
+  style.disabled = !style.disabled;
+  button.textContent = style.disabled ? "Enable" : "Disable";
+});
 ```
 
 #### Result

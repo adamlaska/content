@@ -2,13 +2,9 @@
 title: SVGTransform
 slug: Web/API/SVGTransform
 page-type: web-api-interface
-tags:
-  - API
-  - Reference
-  - SVG
-  - SVG DOM
 browser-compat: api.SVGTransform
 ---
+
 {{APIRef("SVG")}}
 
 ## SVG transform interface
@@ -31,7 +27,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
         <ul>
           <li>
             <code
-              >void setMatrix(in {{ domxref("SVGMatrix") }}
+              >void setMatrix(in {{ domxref("DOMMatrix") }}
               matrix)</code
             >
           </li>
@@ -54,7 +50,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
           <li>readonly unsigned short <code>type</code></li>
           <li>readonly float <code>angle</code></li>
           <li>
-            readonly {{ domxref("SVGMatrix") }} <code>matrix</code>
+            readonly {{ domxref("DOMMatrix") }} <code>matrix</code>
           </li>
         </ul>
       </td>
@@ -135,7 +131,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
   </tbody>
 </table>
 
-## Properties
+## Instance properties
 
 <table class="no-markdown">
   <thead>
@@ -168,7 +164,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
     </tr>
     <tr>
       <td><code>matrix</code></td>
-      <td>{{ domxref("SVGMatrix") }}</td>
+      <td>{{ domxref("DOMMatrix") }}</td>
       <td>
         <p>
           The matrix that represents this transformation. The matrix object is
@@ -210,7 +206,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
   </tbody>
 </table>
 
-## Methods
+## Instance methods
 
 <table class="no-markdown">
   <thead>
@@ -224,7 +220,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
     <tr>
       <td>
         <code
-          ><strong>setMatrix</strong>(in {{ domxref("SVGMatrix") }}
+          ><strong>setMatrix</strong>(in {{ domxref("DOMMatrix") }}
           <em>matrix</em>)</code
         >
       </td>
@@ -249,7 +245,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
     <tr>
       <td>
         <code
-          ><strong>setTranslate</strong>(in float <em>tx</em> , in float
+          ><strong>setTranslate</strong>(in float <em>tx</em>, in float
           <em>ty</em>)</code
         >
       </td>
@@ -274,7 +270,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
     <tr>
       <td>
         <code
-          ><strong>setScale</strong>(in float <em>sx</em> , in float
+          ><strong>setScale</strong>(in float <em>sx</em>, in float
           <em>sy</em>)</code
         >
       </td>
@@ -300,7 +296,7 @@ An `SVGTransform` object can be designated as read only, which means that attemp
       <td>
         <code
           ><strong>setRotate</strong>(in float <em>angle</em>, in float
-          <em>cx</em> , in float <em>cy</em>)</code
+          <em>cx</em>, in float <em>cy</em>)</code
         >
       </td>
       <td><em>void</em></td>
@@ -366,6 +362,10 @@ An `SVGTransform` object can be designated as read only, which means that attemp
     </tr>
   </tbody>
 </table>
+
+## Specifications
+
+{{Specifications}}
 
 ## Browser compatibility
 

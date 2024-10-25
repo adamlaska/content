@@ -1,15 +1,13 @@
 ---
-title: Window.getDefaultComputedStyle()
-slug: Web/API/window/getDefaultComputedStyle
+title: "Window: getDefaultComputedStyle() method"
+short-title: getDefaultComputedStyle()
+slug: Web/API/Window/getDefaultComputedStyle
 page-type: web-api-instance-method
-tags:
-  - API
-  - CSS
-  - Method
-  - Reference
-  - Non-standard
+status:
+  - non-standard
 browser-compat: api.Window.getDefaultComputedStyle
 ---
+
 {{APIRef("CSSOM")}}{{Non-standard_Header}}
 
 The **`getDefaultComputedStyle()`** method gives the default [computed values](/en-US/docs/Web/CSS/computed_value) of all the CSS
@@ -18,7 +16,7 @@ styles are taken into account.
 
 ## Syntax
 
-```js
+```js-nolint
 getDefaultComputedStyle(element)
 getDefaultComputedStyle(element, pseudoElt)
 ```
@@ -51,12 +49,12 @@ const style = window.getDefaultComputedStyle(elem1);
 
 ```html
 <style>
-#elem-container {
-  position: absolute;
-  left:     100px;
-  top:      200px;
-  height:   100px;
-}
+  #elem-container {
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    height: 100px;
+  }
 </style>
 
 <div id="elem-container">dummy</div>
@@ -65,7 +63,7 @@ const style = window.getDefaultComputedStyle(elem1);
 <script>
   const elem = document.getElementById("elem-container");
   const theCSSprop = window.getDefaultComputedStyle(elem).position;
-  document.getElementById("output").innerHTML = theCSSprop; // Will output "static"
+  document.getElementById("output").textContent = theCSSprop; // Will output "static"
 </script>
 ```
 
@@ -76,18 +74,18 @@ pseudo-elements (e.g., {{cssxref("::before")}} or {{cssxref("::after")}}).
 
 ```html
 <style>
- h3:after {
-   content: ' rocks!';
- }
+  h3:after {
+    content: " rocks!";
+  }
 </style>
 
 <h3>generated content</h3>
 
 <script>
-  const h3 = document.querySelector('h3');
-  const result = getDefaultComputedStyle(h3, ':after').content;
+  const h3 = document.querySelector("h3");
+  const result = getDefaultComputedStyle(h3, ":after").content;
 
-  console.log('the generated content is: ', result); // returns 'none'
+  console.log("the generated content is: ", result); // returns 'none'
 </script>
 ```
 
@@ -97,7 +95,7 @@ The returned value is, in certain known cases, expressly incorrect by deliberate
 intent. In particular, to avoid the so called CSS History Leak security issue, browsers
 may expressly "lie" about the used value for a link and always return values as if a
 user has never visited the linked site, and/or limit the styles that can be applied
-using the `:visited` pseudo-selector. See <https://blog.mozilla.com/security/2010/03/31/plugging-the-css-history-leak/>
+using the `:visited` pseudo-selector. See <https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/>
 and <https://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/>
 for details of the examples of how this is implemented.
 

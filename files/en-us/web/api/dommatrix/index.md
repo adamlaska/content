@@ -2,24 +2,14 @@
 title: DOMMatrix (WebKitCSSMatrix)
 slug: Web/API/DOMMatrix
 page-type: web-api-interface
-tags:
-  - API
-  - DOMMatrix
-  - Experimental
-  - Geometry
-  - Geometry Interfaces
-  - Interface
-  - Reference
-  - matrix
-browser-compat:
-  - api.DOMMatrix
-  - api.WebKitCSSMatrix
+browser-compat: api.DOMMatrix
 ---
-{{APIRef("Geometry Interfaces")}}
+
+{{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
 The **`DOMMatrix`** interface represents 4×4 matrices, suitable for 2D and 3D operations including rotation and translation. It is a mutable version of the {{domxref("DOMMatrixReadOnly")}} interface.
 
-**`WebKitCSSMatrix`** is an alias to **`DOMMatrix`**.
+**`WebKitCSSMatrix`** and **`SVGMatrix`** are aliases to **`DOMMatrix`**.
 
 This interface should be available inside [web workers](/en-US/docs/Web/API/Web_Workers_API), though some implementations don't allow it yet.
 
@@ -30,7 +20,7 @@ This interface should be available inside [web workers](/en-US/docs/Web/API/Web_
 - {{domxref("DOMMatrix.DOMMatrix","DOMMatrix()")}}
   - : Creates and returns a new `DOMMatrix` object.
 
-## Properties
+## Instance properties
 
 _This interface inherits properties from {{domxref("DOMMatrixReadOnly")}}, though some of these properties are altered to be mutable._
 
@@ -53,12 +43,12 @@ _This interface inherits properties from {{domxref("DOMMatrixReadOnly")}}, thoug
     | `e`  | `m41`           |
     | `f`  | `m42`           |
 
-## Methods
+## Instance methods
 
 _This interface includes the following methods, as well as the methods it inherits from {{domxref("DOMMatrixReadOnly")}}._
 
 - {{domxref("DOMMatrix.invertSelf()")}}
-  - : Modifies the matrix by inverting it. If the matrix can't be inverted, its components are all set to `NaN`, and {{domxref("DOMMatrix.is2D", "is2D")}} returns `false`.
+  - : Modifies the matrix by inverting it. If the matrix can't be inverted, its components are all set to `NaN`, and [`is2D`](/en-US/docs/Web/API/DOMMatrixReadOnly#is2d) returns `false`.
 - {{domxref("DOMMatrix.multiplySelf()")}}
   - : Modifies the matrix by post-multiplying it with the specified `DOMMatrix`. This is equivalent to the dot product `A⋅B`, where matrix `A` is the source matrix and `B` is the matrix given as an input to the method. Returns itself.
 - {{domxref("DOMMatrix.preMultiplySelf()")}}
@@ -93,7 +83,7 @@ _This interface inherits methods from {{domxref("DOMMatrixReadOnly")}}._
 - {{domxref("DOMMatrix.fromFloat64Array", "fromFloat64Array()")}}
   - : Creates a new mutable `DOMMatrix` object given an array of double-precision (64-bit) floating-point values. If the array has six values, the result is a 2D matrix; if the array has 16 values, the result is a 3D matrix. Otherwise, a {{jsxref("TypeError")}} exception is thrown.
 - {{domxref("DOMMatrix.fromMatrix", "fromMatrix()")}}
-  - : Creates a new mutable `DOMMatrix` object given an existing matrix or a {{domxref("DOMMatrixInit")}} dictionary which provides the values for its properties.
+  - : Creates a new mutable `DOMMatrix` object given an existing matrix or an object which provides the values for its properties.
 
 ## Usage notes
 
@@ -101,9 +91,13 @@ The matrix defined by the `DOMMatrix` interface is comprised of four rows of fou
 
 Here are the positions of the 16 elements (m_11 through m_44) which comprise the 4×4 abstract matrix:
 
-<math display="block"><semantics><mrow><mo>[</mo><mtable rowspacing="0.5ex"><mtr><mtd><msub><mi>m</mi><mn>11</mn></msub></mtd><mtd><msub><mi>m</mi><mn>21</mn></msub></mtd><mtd><msub><mi>m</mi><mn>31</mn></msub></mtd><mtd><msub><mi>m</mi><mn>41</mn></msub></mtd></mtr><mtr><mtd><msub><mi>m</mi><mn>12</mn></msub></mtd><mtd><msub><mi>m</mi><mn>22</mn></msub></mtd><mtd><msub><mi>m</mi><mn>32</mn></msub></mtd><mtd><msub><mi>m</mi><mn>42</mn></msub></mtd></mtr><mtr><mtd><msub><mi>m</mi><mn>13</mn></msub></mtd><mtd><msub><mi>m</mi><mn>23</mn></msub></mtd><mtd><msub><mi>m</mi><mn>33</mn></msub></mtd><mtd><msub><mi>m</mi><mn>43</mn></msub></mtd></mtr><mtr><mtd><msub><mi>m</mi><mn>14</mn></msub></mtd><mtd><msub><mi>m</mi><mn>24</mn></msub></mtd><mtd><msub><mi>m</mi><mn>34</mn></msub></mtd><mtd><msub><mi>m</mi><mn>44</mn></msub></mtd></mtr></mtable><mo>]</mo></mrow><annotation encoding="TeX">\left [ \begin{matrix} m_{11} &#x26; m_{21} &#x26; m_{31} &#x26; m_{41} \\ m_{12} &#x26; m_{22} &#x26; m_{32} &#x26; m_{42} \\ m_{13} &#x26; m_{23} &#x26; m_{33} &#x26; m_{43} \\ m_{14} &#x26; m_{24} &#x26; m_{34} &#x26; m_{44} \end{matrix} \right ]</annotation></semantics></math>
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mo>[</mo><mtable rowspacing="0.5ex"><mtr><mtd><msub><mi>m</mi><mn>11</mn></msub></mtd><mtd><msub><mi>m</mi><mn>21</mn></msub></mtd><mtd><msub><mi>m</mi><mn>31</mn></msub></mtd><mtd><msub><mi>m</mi><mn>41</mn></msub></mtd></mtr><mtr><mtd><msub><mi>m</mi><mn>12</mn></msub></mtd><mtd><msub><mi>m</mi><mn>22</mn></msub></mtd><mtd><msub><mi>m</mi><mn>32</mn></msub></mtd><mtd><msub><mi>m</mi><mn>42</mn></msub></mtd></mtr><mtr><mtd><msub><mi>m</mi><mn>13</mn></msub></mtd><mtd><msub><mi>m</mi><mn>23</mn></msub></mtd><mtd><msub><mi>m</mi><mn>33</mn></msub></mtd><mtd><msub><mi>m</mi><mn>43</mn></msub></mtd></mtr><mtr><mtd><msub><mi>m</mi><mn>14</mn></msub></mtd><mtd><msub><mi>m</mi><mn>24</mn></msub></mtd><mtd><msub><mi>m</mi><mn>34</mn></msub></mtd><mtd><msub><mi>m</mi><mn>44</mn></msub></mtd></mtr></mtable><mo>]</mo></mrow><annotation encoding="TeX">\left [ \begin{matrix} m_{11} & m_{21} & m_{31} & m_{41} \\ m_{12} & m_{22} & m_{32} & m_{42} \\ m_{13} & m_{23} & m_{33} & m_{43} \\ m_{14} & m_{24} & m_{34} & m_{44} \end{matrix} \right ]</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
-The `DOMMatrix` interface is designed with the intent that it will be used for all matrices within markup, supplanting the {{domxref("SVGMatrix")}} and `CSSMatrix` interfaces.
+The `DOMMatrix` interface is designed with the intent that it will be used for all matrices within markup.
 
 ## Specifications
 
@@ -116,4 +110,3 @@ The `DOMMatrix` interface is designed with the intent that it will be used for a
 ## See also
 
 - Its non-modifiable counterpart, {{domxref("DOMMatrixReadOnly")}}
-- {{domxref("SVGMatrix")}}, the SVG matrix intended to be superseded by {{domxref("DOMMatrix")}}

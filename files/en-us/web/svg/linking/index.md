@@ -1,10 +1,9 @@
 ---
 title: Linking
 slug: Web/SVG/Linking
-tags:
-  - Guide
-  - SVG
+page-type: guide
 ---
+
 {{SVGRef}}
 
 The {{SVGAttr("target")}} attribute on the SVG {{SVGElement("a")}} element doesn't work in Mozilla Firefox 1.5. When SVG documents are embedded within a parent HTML document using the tag:
@@ -15,7 +14,7 @@ page1.html:
 <html lang="en">
   <body>
     <p>This is a SVG button:</p>
-    <object width="100" height="50" type="image/svg+xml" data="button.svg"/>
+    <object width="100" height="50" type="image/svg+xml" data="button.svg" />
   </body>
 </html>
 ```
@@ -25,7 +24,7 @@ button.svg:
 ```xml
 <?xml version="1.1" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg">
-  <a xlink:href="page2.html" target="_top">
+  <a href="page2.html" target="_top">
     <g>
       <!-- button graphical elements here -->
     </g>

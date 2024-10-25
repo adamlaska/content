@@ -1,14 +1,9 @@
 ---
 title: How to add a shadow to an element
 slug: Learn/CSS/Howto/Add_a_shadow
-tags:
-  - Basic
-  - Beginner
-  - CSS
-  - CSS:Getting_Started
-  - Guide
-  - Web
+page-type: learn-faq
 ---
+
 {{LearnSidebar}}
 
 In this guide you can find out how to add a shadow to any box on your page.
@@ -30,9 +25,10 @@ In the example below we have set the X and Y axes to 5px, the blur to 10px and t
 
 {{EmbedGHLiveSample("css-examples/howto/box-shadow-button.html", '100%', 500)}}
 
-> **Note:** We are not using `inset` in this example, this means that the shadow is the default drop shadow with the box on top of the shadow. Inset shadows appear inside the box as if the content were pushed back into the page.
+> [!NOTE]
+> We are not using `inset` in this example, this means that the shadow is the default drop shadow with the box on top of the shadow. Inset shadows appear inside the box as if the content were pushed back into the page.
 
 ## See also
 
-- The [Box shadow generator](/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Box-shadow_generator)
+- The [Box shadow generator](/en-US/docs/Web/CSS/CSS_backgrounds_and_borders/Box-shadow_generator)
 - [Learn CSS: Advanced styling effects.](/en-US/docs/Learn/CSS/Building_blocks/Advanced_styling_effects)

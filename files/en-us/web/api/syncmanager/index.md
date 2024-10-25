@@ -2,29 +2,23 @@
 title: SyncManager
 slug: Web/API/SyncManager
 page-type: web-api-interface
-tags:
-  - API
-  - Interface
-  - Reference
-  - ServiceWorker
-  - SyncManager
-  - Experimental
 browser-compat: api.SyncManager
 ---
-{{APIRef("Service Workers API")}}{{SeeCompatTable}}
 
-The **`SyncManager`** interface of the [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API) provides an interface for registering and listing sync registrations.
+{{APIRef("Background Sync")}}{{AvailableInWorkers}}
 
-## Properties
+The **`SyncManager`** interface of the {{domxref("Background Synchronization API", "", "", "nocode")}} provides an interface for registering and listing sync registrations.
+
+## Instance properties
 
 None.
 
-## Methods
+## Instance methods
 
-- {{domxref("SyncManager.register")}} {{Experimental_Inline}}
+- {{domxref("SyncManager.register()")}}
   - : Create a new sync registration and return a {{jsxref("Promise")}}.
-- {{domxref("SyncManager.getTags")}} {{Experimental_Inline}}
-  - : Return a list of developer-defined identifiers for SyncManager registration.
+- {{domxref("SyncManager.getTags()")}}
+  - : Return a list of developer-defined identifiers for `SyncManager` registrations.
 
 ## Specifications
 

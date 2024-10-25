@@ -1,23 +1,11 @@
 ---
-title: RTCOutboundRtpStreamStats.pliCount
+title: "RTCOutboundRtpStreamStats: pliCount property"
+short-title: pliCount
 slug: Web/API/RTCOutboundRtpStreamStats/pliCount
 page-type: web-api-instance-property
-tags:
-  - API
-  - Media
-  - PLI
-  - Property
-  - RTCOutboundRtpStreamStats
-  - Reference
-  - Statistics
-  - Stats
-  - Video
-  - WebRTC
-  - WebRTC API
-  - pliCount
-  - stream
 browser-compat: api.RTCOutboundRtpStreamStats.pliCount
 ---
+
 {{APIRef("WebRTC")}}
 
 The **`pliCount`** property of the
@@ -36,7 +24,8 @@ the remote peer's {{domxref("RTCRtpReceiver")}}. These are sent by the receiver'
 decoder to notify the sender's encoder that an undefined amount of coded video data,
 which may span frame boundaries, has been lost.
 
-> **Note:** This property is only used for video streams.
+> [!NOTE]
+> This property is only used for video streams.
 
 ## Usage notes
 
